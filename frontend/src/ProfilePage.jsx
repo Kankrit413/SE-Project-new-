@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { ArrowLeft, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './styles.css';
+import './profilepage.css';
+import Navbar from './navbar';
 
 const UserProfile = () => {
   const navigate = useNavigate();
@@ -20,65 +21,82 @@ const UserProfile = () => {
     }
   }, [navigate]);
 
+  const handleLogout = () => {
+    localStorage.removeItem('username');
+    navigate('/login');
+  };
+
+  const navigateToNotifications = () => {
+    navigate('/notifications');
+  };
+
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-100 py-6">
-      {/* Main Card */}
-      <div className="relative bg-white shadow-lg p-8 w-full max-w-sm rounded-lg flex flex-col items-center space-y-6">
-        
-        {/* Back Arrow */}
-        <ArrowLeft
-          className="text-gray-400 w-6 h-6 cursor-pointer hover:scale-110 transition-transform absolute left-4 top-4"
-          onClick={() => navigate(-1)} // Go back to the previous page
-        />
+    <div className="container">
+      {/* Sidebar/Navbar */}
+      <Navbar />
 
-        {/* Profile Image */}
-        <div className="circle-container mt-6 mb-4">
-          {userData?.profileImage ? (
-            <img src={userData.profileImage} alt="Profile" className="profile-image rounded-full w-24 h-24" />
-          ) : (
-            <User className="default-icon text-gray-400 w-24 h-24" />
-          )}
-        </div>
-
-        {/* Username */}
-        <h2 className="text-lg font-medium text-gray-700 mb-6">{userData?.username || 'User'}</h2>
-
-        {/* User Details */}
-        <div className="space-y-6 w-full">
-          {[{ label: 'Username', value: userData?.username },
-            { label: 'Company Name', value: userData?.company },
-            { label: 'Email', value: userData?.email },
-            { label: 'Phone Number', value: userData?.phoneNumber },
-          ].map((field, index) => (
-            <div key={index} className="flex flex-col space-y-2">
-              <label className="text-sm text-gray-600">{field.label}</label>
-              <input
-                type="text"
-                value={field.value || 'N/A'}
-                readOnly
-                className="bg-gray-100 px-4 py-2 rounded-lg text-gray-800"
-              />
-            </div>
-          ))}
-        </div>
-          
-        {/* Buttons: Back and Edit */}
-        <div className="flex items-center justify-between mt-6 w-full space-x-4">
-          {/* Back Button */}
-          <button
-            className="bg-gray-500 text-white px-4 py-2 rounded-lg w-1/2 hover:bg-gray-600 transition"
+      {/* Main Content */}
+      <div className="main-content ">
+        <div className="profile-card">
+          {/* Back Arrow */}
+          <ArrowLeft
+            className="back-arrow"
             onClick={() => navigate(-1)} // Go back to the previous page
-          >
-            Back
-          </button>
-          
-          {/* Edit Profile Button */}
-          <button
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg w-1/2 hover:bg-blue-600 transition"
-            onClick={() => navigate(`/edit-profile/${userData?.username}`)} // ไปยังหน้าสำหรับแก้ไขโปรไฟล์
-          >
-            Edit Profile
-          </button>
+          />
+
+          {/* Profile Image */}
+          <div className="circle-container">
+            {userData?.profileImage ? (
+              <img
+                src={userData.profileImage}
+                alt="Profile"
+                className="profile-image rounded-full w-24 h-24"
+              />
+            ) : (
+              <User className="default-icon" />
+            )}
+          </div>
+
+          {/* Username */}
+          <h2 className="text">
+            {userData?.username || 'User'}
+          </h2>
+
+          {/* User Details */}
+          <div className="detail-item">
+            {[
+              { label: 'Username', value: userData?.username },
+              { label: 'Company Name', value: userData?.company },
+              { label: 'Email', value: userData?.email },
+              { label: 'Phone Number', value: userData?.phoneNumber },
+            ].map((field, index) => (
+              <React.Fragment key={index}>
+                <label>{field.label}</label>
+                <input
+                  type="text"
+                  value={field.value || 'N/A'}
+                  readOnly
+                />
+              </React.Fragment>
+            ))}
+          </div>
+
+
+          {/* Buttons: Back and Edit */}
+          <div className="flex items-center justify-between mt-6 w-full space-x-4">
+            <button
+              className="bg-gray-500 text-white px-4 py-2 rounded-lg w-1/2 hover:bg-gray-600 transition"
+              onClick={() => navigate(-1)}
+            >
+              Back
+            </button>
+            <button
+              className="bg-blue-500 text-white px-4 py-2 rounded-lg w-1/2 hover:bg-blue-600 transition"
+              onClick={() => navigate(`/edit-profile/${userData?.username}`)}
+            >
+              Edit Profile
+            </button>
+          </div>
         </div>
       </div>
     </div>

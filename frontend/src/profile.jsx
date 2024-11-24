@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ArrowLeft, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './styles.css';
+import './profile.css';
 
 const UserProfile = () => {
   const navigate = useNavigate();
@@ -43,59 +43,59 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-100">
-      <div className="relative bg-white shadow-lg p-8 w-full max-w-sm rounded-lg flex flex-col items-center">
+    <div className="profile-page-container">
+      <div className="profile-card1">
         <ArrowLeft
-          className="text-gray-400 w-6 h-6 cursor-pointer hover:scale-110 transition-transform absolute left-4 top-4"
+          className="back-arrow"
           onClick={() => navigate('/home')}
         />
-        <div className="circle-container mt-8 mb-4">
+        <div className="circle-container">
           {userData?.profileImage ? (
             <img
               src={userData.profileImage}
               alt="Profile"
-              className="profile-image rounded-full w-24 h-24 object-cover"
+              className="profile-image"
             />
           ) : (
-            <User className="default-icon text-gray-400 w-24 h-24" />
+            <User className="default-icon" />
           )}
         </div>
-        <h2 className="text-lg font-medium text-gray-700">{userData?.username || 'User'}</h2>
-        <div className="flex flex-col items-center mt-6 space-y-4 w-full">
+        <h2 className="profile-username">{userData?.username || 'User'}</h2>
+        <div className="button-container">
           <button
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-600 transition"
+            className="action-button"
             onClick={() => navigate('/profile-page')}
           >
-            View Profile Details
+            Profile 
           </button>
           <button
-            className="bg-green-500 text-white px-4 py-2 rounded-lg w-full hover:bg-green-600 transition"
-            onClick={() => navigate('/add-product')}
+            className="action-button"
+            onClick={() => navigate('/add-product1')}
           >
             Advertising
           </button>
           <button
-            className="bg-indigo-500 text-white px-4 py-2 rounded-lg w-full hover:bg-indigo-600 transition"
+            className="action-button"
             onClick={() => navigate('/advertising-history')}
           >
             Advertising History
           </button>
-
           <button
-            className="bg-indigo-500 text-white px-4 py-2 rounded-lg w-full hover:bg-indigo-600 transition"
+            className="action-button"
             onClick={navigateToNotifications}
           >
             Notifications
           </button>
-
+        </div>
+        <div className="button-container">
           <button
-            className="bg-red-500 text-white px-4 py-2 rounded-lg w-full hover:bg-red-600 transition"
+            className="logout-button"
             onClick={handleLogout}
           >
             Logout
           </button>
           <button
-            className="bg-gray-500 text-white px-4 py-2 rounded-lg w-full hover:bg-gray-600 transition"
+            className="return-button"
             onClick={() => navigate('/home')}
           >
             Return to Home

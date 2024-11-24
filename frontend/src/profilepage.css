@@ -1,0 +1,146 @@
+/* Container for the layout */
+.container {
+    display: flex;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Sidebar/Navbar Styles */
+  .navbar {
+    width: 250px;
+    background-color: #ffe6e6;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  /* Profile Card */
+  .profile-card {
+    background-color: #ffe6e6;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Profile Image */
+  .circle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .profile-image {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .default-icon {
+    width: 96px;
+    height: 96px;
+    color: #ffffff;
+  }
+  
+  /* Username */
+  .text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 20px;
+  }
+  
+  /* User Details */
+  .detail-item {
+    display: grid;
+    grid-template-columns: 150px 1fr; /* กำหนด 2 คอลัมน์: Label และ Input */
+    align-items: center; /* จัดแนว Label และ Input ให้อยู่กึ่งกลาง */
+    gap: 10px 20px; /* ระยะห่างระหว่างแถวและคอลัมน์ */
+    margin-bottom: 20px;
+  }
+  
+  .detail-item label {
+    text-align: right; /* จัด Label ชิดขวา */
+    font-size: 0.9rem;
+    color: #777;
+    padding-right: 10px; /* เพิ่มระยะห่างระหว่าง Label กับ Input */
+  }
+  
+  .detail-item input {
+    width: 80%; /* ปรับให้ Input ขยายเต็มพื้นที่ */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333;
+  }
+  .text-sm {
+    font-size: 0.9rem;
+    color: #ffffff;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #ffffff;
+  }
+  
+  input[readonly] {
+    background-color: #ffffff;
+  }
+  
+  /* Buttons */
+  button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  .bg-gray-500 {
+    background-color: #6b7280;
+    color: white;
+  }
+  
+  .bg-blue-500 {
+    background-color: #ffadb5;
+    color: white;
+  }
+  
+  .bg-blue-500:hover {
+    background-color: #ff7886;
+  }
+  
+  .bg-gray-500:hover {
+    background-color: #4b5563;
+  }
+  
+  /* Back Arrow */
+  .back-arrow {
+    font-size: 1.5rem;
+    color: #4a4a4a;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  /* Spacing for buttons */
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  

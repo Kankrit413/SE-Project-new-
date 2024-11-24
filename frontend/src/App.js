@@ -14,7 +14,8 @@ import Recommended from './Page2/mainheader';
 import PaymentForm from './Page2/payment';
 import AdvertisingHistory from './advertisinghistory'; // Import the AdvertisingHistory component
 import Notifications from './Notifications'; 
-import MainHeader from "./Page2/mainheader"; 
+import MainHeader from "./Page2/mainheader";
+import AddProductForm1 from './addproduct1'; 
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/advertising-history" element={<AdvertisingHistory />} /> {/* Route for Advertising History */}
         <Route path="/notifications" element={<Notifications />} /> {/* Route for Notifications */}
         <Route path="/Page2/mainheader/:productId" element={<MainHeader />} />
+        <Route path="/add-product1" element={<AddProductForm1 />} />
       </Routes>
     </Router>
   );

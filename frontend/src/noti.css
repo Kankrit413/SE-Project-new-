@@ -1,0 +1,85 @@
+/* General container style */
+.container {
+    display: flex;
+    min-height: 100vh; /* Ensure the container spans the full viewport height */
+  }
+  
+  /* Notifications Section */
+  .notifications-container {
+    flex: 1;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+  }
+  
+  .notifications-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* No Notifications Message */
+  .no-notifications {
+    padding: 20px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  /* Notifications List */
+  .notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Individual Notification Item */
+  .notification-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: #FFE5E6;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .notification-title {
+    font-weight: bold;
+    color: #155724;
+    flex-basis: 100%; /* Ensures title takes full width */
+  }
+  
+  .product-detail {
+    margin-right: 10px;
+    font-size: 14px;
+  }
+  
+  .product-time {
+    font-style: italic;
+    color: #555;
+    flex-basis: 100%;
+  }
+  
+  /* Back Button */
+  .back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f66262;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .back-button:hover {
+    background-color: #d64040;
+  }
+  

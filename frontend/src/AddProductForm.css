@@ -145,13 +145,27 @@ body {
     align-items: baseline;
     justify-content: space-between; /* ระยะห่างระหว่าง input */
     gap: 20px; /* ระยะห่างระหว่าง input */
-    margin-bottom: 20px; /* เว้นช่องว่างระหว่าง row */
+    /* margin-bottom: 20px; เว้นช่องว่างระหว่าง row */
 }
 
 .ingredients-btn {
     background: #ff8080;
     color: #fff;
 }
+
+.related-products-field {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between; /* ระยะห่างระหว่าง input */
+    gap: 10px; /* ระยะห่างระหว่าง input */
+    /* margin-bottom: 20px; เว้นช่องว่างระหว่าง row */
+}
+
+.related-products-btn {
+    background: #ff8080;
+    color: #fff;
+}
+
 
 .form-group {
     display: flex;

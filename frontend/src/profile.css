@@ -1,0 +1,140 @@
+/* พื้นที่พื้นหลังหลัก */
+.profile-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffe6ea; /* สีพื้นหลังชมพูอ่อน */
+    padding: 20px;
+  }
+  
+  /* การ์ดโปรไฟล์ */
+  .profile-card1 {
+    background-color: #fff;
+    width: 100%;
+    max-width: 800px;
+    height: 75%;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+  }
+  
+  /* ปุ่มย้อนกลับ */
+  .back-arrow {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 24px;
+    color: #ff799a; /* สีชมพูสด */
+    cursor: pointer;
+  }
+  
+  .back-arrow:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+  }
+  
+  /* รูปโปรไฟล์ */
+  .circle-container {
+    margin: 16px auto;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .default-icon {
+    font-size: 48px;
+    color: #ff799a;
+  }
+  
+  /* ชื่อผู้ใช้งาน */
+  .profile-username {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4a4a4a;
+    margin: 16px 0;
+  }
+  
+  /* กล่องปุ่ม */
+.button-container {
+    display: flex;
+    flex-wrap: wrap; /* เพื่อให้ปุ่มเลื่อนลงแถวใหม่หากพื้นที่ไม่พอ */
+    justify-content: center; /* จัดกึ่งกลางแนวนอน */
+    gap: 30px; /* ระยะห่างระหว่างปุ่ม */
+    margin-top: 50px;
+  }
+  
+  /* ปุ่มทั่วไป */
+  .action-button {
+    background-color: rgba(255, 121, 154, 0.2); /* สีชมพูจาง */
+    color: #ff799a;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 12px 24px; /* ขยายขนาดปุ่มให้เหมาะกับแนวนอน */
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    flex: 1; /* ให้ปุ่มมีขนาดสมดุลใน Flexbox */
+    max-width: 150px; /* จำกัดความกว้างของปุ่ม */
+    height: 150px;
+    text-align: center;
+  }
+  
+  .action-button:hover {
+    transform: scale(1.05);
+    border-color: #007bff; /* สีกรอบฟ้าเมื่อ hover */
+  }
+  
+  /* ปุ่มออกจากระบบ */
+  .logout-button {
+    background-color: #ff4d4f;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    flex: 1;
+    max-width: 150px;
+    text-align: center;
+  }
+  
+  .logout-button:hover {
+    background-color: #d9363e;
+    transform: scale(1.05);
+  }
+  
+  /* ปุ่มกลับหน้าแรก */
+  .return-button {
+    background-color: #aaa;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    flex: 1;
+    max-width: 150px;
+    text-align: center;
+  }
+  
+  .return-button:hover {
+    background-color: #888;
+    transform: scale(1.05);
+  }

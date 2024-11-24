@@ -124,159 +124,172 @@ const AddProductForm = () => {
   
   return (
     <div className="add-product-form-container">
-      <button className="close-btn" onClick={() => navigate(-1)}>&times;</button>
-      <form onSubmit={handleSubmit} className="add-product-form">
-        {error && <div className="error-message">{error}</div>}
+        <button className="close-btn" onClick={() => navigate(-1)}>&times;</button>
+        <form onSubmit={handleSubmit} className="add-product-form">
+          {error && <div className="error-message">{error}</div>}
 
-        <input
-          type="text"
-          name="name"
-          placeholder="Product Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="input-field"
-        />
+          <div className="form-group">
+              <input
+                  type="text"
+                  name="name"
+                  placeholder="Product Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="input-field"
+              />
+          </div>
 
-        <textarea
-          name="description"
-          placeholder="Product Details"
-          value={formData.description}
-          onChange={handleChange}
-          required
-          className="textarea-field"
-        />
+          <div className="form-group">
+              <textarea
+                  name="description"
+                  placeholder="Product Details"
+                  value={formData.description}
+                  onChange={handleChange}
+                  required
+                  className="textarea-field"
+              ></textarea>
+          </div>
 
-        <select
-          name="type"
-          value={formData.type}
-          onChange={handleChange}
-          required
-          className="select-field"
-        >
-          <option value="">Select Type</option>
-          <option value="sunscreen">Sunscreen</option>
-          <option value="cleanser">Cleanser</option>
-          <option value="moisturizer">Moisturizer</option>
-        </select>
+          <div className="form-group">
+               <select
+                  name="type"
+                  value={formData.type}
+                  onChange={handleChange}
+                  required
+                  className="select-field"
+              >
+                  <option value="">
+                      Select Type
+                  </option>
+                  <option value="sunscreen">Sunscreen</option>
+                  <option value="cleanser">Cleanser</option>
+                  <option value="moisturizer">Moisturizer</option>
+               </select>
+               <input
+                  type="text"
+                  name="brand"
+                  placeholder="Brand"
+                  value={formData.brand}
+                  onChange={handleChange}
+                  required
+                  className="input-field"
+              />
+              <input
+                  type="text"
+                  name="price"
+                  placeholder="Price (e.g., ฿100)"
+                  value={formData.price}
+                  onChange={handleChange}
+                  required
+                  className="input-field"
+              />
+          </div>
 
-        <input
-          type="text"
-          name="brand"
-          placeholder="Brand"
-          value={formData.brand}
-          onChange={handleChange}
-          required
-          className="input-field"
-        />
+          {/* ส่วนของ Ingredients */}
+          <div className="ingredients-field">
+            <input
+              type="text"
+              placeholder="Add an ingredient"
+              value={currentIngredient}
+              onChange={(e) => setCurrentIngredient(e.target.value)}
+              className="input-field"
+            />
+            <button type="button" onClick={handleAddIngredient} className="ingredients-btn">
+              Add Ingredient
+            </button>
+            <ul className="ingredient-list">
+              {ingredients.map((ingredient, index) => (
+                <li key={index} className="ingredient-item">
+                  {ingredient}
+                  <button
+                    type="button"
+                    onClick={() => handleRemoveIngredient(index)}
+                    className="remove-btn"
+                  >
+                    Remove
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <input
-          type="number"
-          name="price"
-          placeholder="Price (e.g., ฿100)"
-          value={formData.price}
-          onChange={handleChange}
-          required
-          className="input-field"
-        />
+          {/* ส่วนของ Related Products */}
+          <div className="related-products-field">
+            <input
+              type="text"
+              placeholder="Add a related product"
+              value={currentRelatedProduct}
+              onChange={(e) => setCurrentRelatedProduct(e.target.value)}
+              className="input-field"
+            />
+            <button
+              type="button"
+              onClick={handleAddRelatedProduct}
+              className="related-products-btn"
+            >
+              Add Related Product
+            </button>
+            <ul className="related-products-list">
+              {relatedProducts.map((product, index) => (
+                <li key={index} className="related-product-item">
+                  {product}
+                  <button
+                    type="button"
+                    onClick={() => handleRemoveRelatedProduct(index)}
+                    className="remove-btn"
+                  >
+                    Remove
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        {/* ส่วนของ Ingredients */}
-        <div className="ingredients-field">
-          <input
-            type="text"
-            placeholder="Add an ingredient"
-            value={currentIngredient}
-            onChange={(e) => setCurrentIngredient(e.target.value)}
-            className="input-field"
-          />
-          <button type="button" onClick={handleAddIngredient} className="ingredients-btn">
-            Add Ingredient
-          </button>
-          <ul className="ingredient-list">
-            {ingredients.map((ingredient, index) => (
-              <li key={index} className="ingredient-item">
-                {ingredient}
-                <button
-                  type="button"
-                  onClick={() => handleRemoveIngredient(index)}
-                  className="remove-btn"
-                >
-                  Remove
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+          {/* ส่วนของ Review Link */}
+          <div className="review-links-field">
+            <input
+              type="url"
+              name="reviewLink"
+              placeholder="Add a review link (https://...)"
+              value={formData.reviewLink}
+              onChange={handleChange}
+              className="input-field"
+            />
+          </div>
 
-        {/* ส่วนของ Related Products */}
-        <div className="related-products-field">
-          <input
-            type="text"
-            placeholder="Add a related product"
-            value={currentRelatedProduct}
-            onChange={(e) => setCurrentRelatedProduct(e.target.value)}
-            className="input-field"
-          />
-          <button
-            type="button"
-            onClick={handleAddRelatedProduct}
-            className="related-products-btn"
-          >
-            Add Related Product
-          </button>
-          <ul className="related-products-list">
-            {relatedProducts.map((product, index) => (
-              <li key={index} className="related-product-item">
-                {product}
-                <button
-                  type="button"
-                  onClick={() => handleRemoveRelatedProduct(index)}
-                  className="remove-btn"
-                >
-                  Remove
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+          <div className="form-group file-upload">
+              <label htmlFor="file">
+                  Upload a file <i className="fas fa-upload"></i>
+              </label>
+              <input
+                  type="file"
+                  id="file"
+                  name="image"
+                  onChange={(e) => setImage(e.target.files[0])}
+                  required
+              />
+          </div>
 
-        {/* ส่วนของ Review Link */}
-        <div className="review-links-field">
-          <input
-            type="url"
-            name="reviewLink"
-            placeholder="Add a review link (https://...)"
-            value={formData.reviewLink}
-            onChange={handleChange}
-            className="input-field"
-          />
-        </div>
+          <div className="form-row">
+            <button
+              type="button"
+              className={`price-btn ${selectedPrice === "weekly" ? "selected" : ""}`}
+              onClick={() => setSelectedPrice("weekly")}
+            >
+              ฿ 1,000 / week
+            </button>
+            <button
+              type="button"
+              className={`price-btn ${selectedPrice === "monthly" ? "selected" : ""}`}
+              onClick={() => setSelectedPrice("monthly")}
+            >
+              ฿ 3,000 / month
+            </button>
+          </div>
 
-        <input
-          type="file"
-          onChange={(e) => setImage(e.target.files[0])}
-          required
-        />
-
-        <div className="form-row">
-          <button
-            type="button"
-            className={`price-btn ${selectedPrice === "weekly" ? "selected" : ""}`}
-            onClick={() => setSelectedPrice("weekly")}
-          >
-            ฿ 1,000 / week
-          </button>
-          <button
-            type="button"
-            className={`price-btn ${selectedPrice === "monthly" ? "selected" : ""}`}
-            onClick={() => setSelectedPrice("monthly")}
-          >
-            ฿ 3,000 / month
-          </button>
-        </div>
-
-        <button type="submit" className="submit-btn">Add Product</button>
-      </form>
+          <button type="submit" className="submit-btn">Add Product</button>
+        </form>
     </div>
   );
 };
