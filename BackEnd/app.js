@@ -68,7 +68,8 @@ const productSchema = new mongoose.Schema({
     price: { type: Number, required: true },
     brand: { type: String, required: true },
     createdAt: { type: Date, default: Date.now },
-    addedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+    addedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    reviewLinks: [String] 
 });
 
 const userSchema = new mongoose.Schema({
@@ -237,36 +238,35 @@ app.get('/api/products/type/:type', async (req, res) => {
 
 // Add New Product
 app.post('/api/add-product', upload.single('productImage'), async (req, res) => {
-    const { name, ingredients, description, relatedProducts, type, price, brand, addedBy } = req.body;
-
+    const { name, description, type, price, brand, addedBy, ingredients, relatedProducts, reviewLinks } = req.body;
+  
     if (!name || !type || !price || !brand || !addedBy) {
-        if (req.file) fs.unlink(req.file.path, (err) => console.error(err));
-        return res.status(400).json({ message: 'กรุณากรอกข้อมูลให้ครบถ้วน' });
+      return res.status(400).json({ message: 'กรุณากรอกข้อมูลให้ครบถ้วน' });
     }
-
+  
     try {
-        const user = await User.findOne({ username: addedBy });
-        if (!user) return res.status(404).json({ message: 'ไม่พบผู้ใช้' });
-
-        const product = new Product({
-            name,
-            ingredients: ingredients ? JSON.parse(ingredients) : [],
-            description,
-            relatedProducts: relatedProducts ? JSON.parse(relatedProducts) : [],
-            imageUrl: req.file ? `/uploads/products/${req.file.filename}` : '',
-            type,
-            price: Number(price),
-            brand,
-            addedBy: user._id
-        });
-
-        const newProduct = await product.save();
-        res.status(201).json({ message: 'เพิ่มผลิตภัณฑ์สำเร็จ', product: newProduct });
-    } catch (err) {
-        if (req.file) fs.unlink(req.file.path, (err) => console.error(err));
-        res.status(500).json({ message: 'ไม่สามารถเพิ่มผลิตภัณฑ์ได้', error: err.message });
+      const user = await User.findOne({ username: addedBy });
+      if (!user) return res.status(404).json({ message: 'ไม่พบผู้ใช้ที่ระบุ' });
+  
+      const product = new Product({
+        name,
+        description,
+        type,
+        price: Number(price),
+        brand,
+        addedBy: user._id,
+        ingredients: ingredients ? JSON.parse(ingredients) : [],
+        relatedProducts: relatedProducts ? JSON.parse(relatedProducts) : [],
+        reviewLinks: reviewLinks ? JSON.parse(reviewLinks) : [], // รับค่าจาก frontend ที่เป็น array แล้ว
+        imageUrl: req.file ? `/uploads/products/${req.file.filename}` : null,
+      });
+  
+      const savedProduct = await product.save();
+      res.status(201).json({ message: 'เพิ่มผลิตภัณฑ์สำเร็จ', product: savedProduct });
+    } catch (error) {
+      res.status(500).json({ message: 'เกิดข้อผิดพลาดในการบันทึกผลิตภัณฑ์', error: error.message });
     }
-});
+  });  
 
 // Update Product
 app.put('/api/products/:id', upload.single('productImage'), async (req, res) => {
@@ -291,6 +291,9 @@ app.put('/api/products/:id', upload.single('productImage'), async (req, res) => 
         }
         if (updateData.relatedProducts) {
             updateData.relatedProducts = JSON.parse(updateData.relatedProducts);
+        }
+        if (updateData.reviewLinks) {
+            updateData.reviewLinks = JSON.parse(updateData.reviewLinks); // แปลง JSON เป็น Array
         }
         if (updateData.price) {
             updateData.price = Number(updateData.price);
@@ -432,6 +435,74 @@ app.get('/api/products/by-user/:username', async (req, res) => {
     }
 });
 
+// Get Product by ID
+app.get('/api/products/:id', async (req, res) => {
+    try {
+        const product = await Product.findById(req.params.id)
+            .populate('addedBy', 'username email');
+            
+        if (!product) {
+            return res.status(404).json({
+                message: 'ไม่พบสินค้าที่ต้องการ'
+            });
+        }
+        
+        res.json(product);
+    } catch (err) {
+        res.status(500).json({
+            message: 'เกิดข้อผิดพลาดในการดึงข้อมูลสินค้า',
+            error: err.message
+        });
+    }
+});
+
+app.put('/api/users/:username', upload.single('profileImage'), async (req, res) => {
+    const { username } = req.params;
+    const { email, phoneNumber, company } = req.body;
+  
+    try {
+        // ค้นหาผู้ใช้ก่อนอัปเดต
+        const user = await User.findOne({ username });
+        if (!user) {
+            if (req.file) fs.unlinkSync(req.file.path); // ลบไฟล์ใหม่ถ้าผู้ใช้ไม่พบ
+            return res.status(404).json({ message: 'ไม่พบผู้ใช้ที่ระบุ' });
+        }
+  
+        // ลบรูปโปรไฟล์เก่าถ้ามี
+        if (req.file && user.profileImage) {
+            const oldImagePath = path.join(__dirname, user.profileImage);
+            fs.unlink(oldImagePath, err => {
+                if (err && err.code !== 'ENOENT') {
+                    console.error('Error deleting old profile image:', err);
+                }
+            });
+        }
+  
+        // อัปเดตข้อมูล
+        const updatedUser = await User.findOneAndUpdate(
+            { username },
+            {
+                email,
+                phoneNumber,
+                company,
+                profileImage: req.file ? `/uploads/profiles/${req.file.filename}` : user.profileImage
+            },
+            { new: true }
+        );
+  
+        res.status(200).json({
+            message: 'อัปเดตโปรไฟล์สำเร็จ',
+            user: updatedUser,
+        });
+    } catch (err) {
+        if (req.file) fs.unlinkSync(req.file.path); // ลบไฟล์ใหม่ถ้าเกิดข้อผิดพลาด
+        res.status(500).json({
+            message: 'เกิดข้อผิดพลาดในการอัปเดตโปรไฟล์',
+            error: err.message,
+        });
+    }
+});
+  
 // Start Server
 app.listen(port, () => {
     console.log(`เซิร์ฟเวอร์กำลังรันบนพอร์ต ${port}`);
