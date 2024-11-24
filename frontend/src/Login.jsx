@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import "./Login.css";
+import imageLogin from "./imageLogin.png"
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -30,50 +32,47 @@ const Login = () => {
     };
 
     return (
-        <div style={{ margin: '2rem', textAlign: 'center' }}>
-            <h2>Welcome to the Login Page</h2>
-            <form onSubmit={handleLogin} style={{ display: 'inline-block', textAlign: 'left' }}>
-                <div style={{ marginBottom: '1rem' }}>
-                    <label htmlFor="username" style={{ display: 'block', marginBottom: '0.5rem' }}>Username</label>
-                    <input
-                        type="text"
-                        id="username"
-                        placeholder="Enter your username"
-                        value={username}
-                        onChange={e => setUsername(e.target.value)}
-                        required
-                        style={{ padding: '0.5rem', width: '100%', boxSizing: 'border-box' }}
+        <div className="login-page">
+            <button className="close-btn-log" onClick={() => navigate(-1)}>&times;</button>
+            <div className="login-container">
+                <div className="login-image">
+                    <img
+                        src={imageLogin} // Replace this with your desired image
+                        alt="Login Illustration"
                     />
                 </div>
-                <div style={{ marginBottom: '1rem' }}>
-                    <label htmlFor="password" style={{ display: 'block', marginBottom: '0.5rem' }}>Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        placeholder="Enter your password"
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
-                        required
-                        style={{ padding: '0.5rem', width: '100%', boxSizing: 'border-box' }}
-                    />
+                <div className="login-form">
+                    <h2>Welcome Back</h2>
+                    <form onSubmit={handleLogin}>
+                        <div className="form-group">
+                            <label htmlFor="username">Username</label>
+                            <input
+                                type="text"
+                                id="username"
+                                placeholder="Enter your username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <button type="submit" className="btn-submit">Login</button>
+                    </form>
+                    <p>
+                        Don't have an account? <Link to="/register">Register here</Link>.
+                    </p>
                 </div>
-                <button
-                    type="submit"
-                    style={{
-                        padding: '0.5rem 1rem',
-                        backgroundColor: '#007BFF',
-                        color: '#FFF',
-                        border: 'none',
-                        borderRadius: '0.25rem',
-                        cursor: 'pointer',
-                    }}
-                >
-                    Login
-                </button>
-            </form>
-            <p style={{ marginTop: '1rem' }}>
-                Don’t have an account? <Link to="/register" style={{ color: '#007BFF' }}>Register here</Link>.
-            </p>
+            </div>
         </div>
     );
 };
