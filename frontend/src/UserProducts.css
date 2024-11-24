@@ -1,0 +1,66 @@
+.user-products-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffe4e1; /* พื้นหลังสีชมพู */
+    min-height: 100vh;
+    width: 100%;
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 28px; /* เพิ่มขนาดฟอนต์ */
+    font-weight: bold;
+    color: #333;
+    text-align: center; /* จัดให้อยู่กลาง */
+}
+
+.product-list {
+    display: flex;
+    flex-direction: column; /* จัดเรียงแบบซ้อนกัน */
+    gap: 20px;
+    width: 100%; /* ขยายให้เต็มหน้าจอ */
+    max-width: 800px; /* จำกัดความกว้างสูงสุด */
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px; /* ปรับลด padding ภายในการ์ด */
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    min-height: 300px; /* เพิ่มความยาวการ์ด */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%; /* ปรับให้ภาพขยายเต็มความกว้างของการ์ด */
+    height: 300px; /* กำหนดความสูงให้เหมาะสม */
+    object-fit: cover; /* ทำให้ภาพไม่เสียรูป */
+    border-radius: 5px; /* ทำให้มุมโค้งมน */
+    margin-bottom: 5px; /* ลดช่องว่างระหว่างภาพกับข้อมูล */
+}
+
+.back-button {
+    margin-top: 20px;
+    padding: 10px 15px; /* เพิ่ม padding ให้ปุ่มดูเด่นขึ้น */
+    background-color: #ff69b4; /* สีชมพูเข้ม */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* เพิ่มขนาดฟอนต์ */
+    width: 120px; /* เพิ่มความกว้างปุ่ม */
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #ff1493; /* สีชมพูเข้มกว่าเมื่อ hover */
+}

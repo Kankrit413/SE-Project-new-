@@ -1,0 +1,169 @@
+/* AdminPage container styling */
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #ffe6e6;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Scope all styles under .add-product-form-container */
+.add-product-form-container {
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* Form background */
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    margin-top: auto;
+    top: 20px;
+}
+
+/* Close Button */
+.add-product-form-container .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    background: #ffb3b3;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    /* text-align: center; */
+    line-height: 8px;
+    /* transition: background-color 0.3s ease; */
+}
+
+.add-product-form-container .close-btn:hover {
+    background: #ff8080;
+}
+
+/* Form Styling */
+.add-product-form-container .add-product-form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Input and Textarea Fields */
+.add-product-form-container .input-field,
+.add-product-form-container .textarea-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    background: #f8f9fa;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.add-product-form-container .textarea-field {
+    height: 100px;
+    resize: none;
+}
+
+/* File Upload */
+.add-product-form-container .file-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e6e6e6;
+}
+
+.add-product-form-container .file-upload input[type="file"] {
+    cursor: pointer;
+}
+
+
+/* Submit Button */
+.add-product-form-container .submit-btn {
+    background: #ff8080;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.add-product-form-container .submit-btn:hover {
+    background: #ff6666;
+}
+
+/* ปุ่มราคา */
+.price-btn {
+    flex: 1;
+    color: #5d5d5d;
+    background-color: #ffdede;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.price-btn:hover {
+    background-color: #ffcccc;
+    border-color: #ff6666;
+}
+
+.price-btn.selected {
+    background-color: #ff6666; /* สีแดงสำหรับสถานะที่เลือก */
+    color: white;
+    /* border-color: #e65555; */
+}
+
+/* Form Row */
+.form-row {
+    display: flex;
+    justify-content: space-between; /* ระยะห่างระหว่าง input */
+    gap: 20px; /* ระยะห่างระหว่าง input */
+    margin-bottom: 20px; /* เว้นช่องว่างระหว่าง row */
+}
+
+.form-row .input-field {
+    flex: 1; /* ให้ช่อง input ขยายตัวตามพื้นที่ */
+}
+
+.ingredients-field {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between; /* ระยะห่างระหว่าง input */
+    gap: 20px; /* ระยะห่างระหว่าง input */
+    margin-bottom: 20px; /* เว้นช่องว่างระหว่าง row */
+}
+
+.ingredients-btn {
+    background: #ff8080;
+    color: #fff;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between; /* ระยะห่างระหว่าง input */
+    gap: 20px; /* ระยะห่างระหว่าง input */
+    margin-bottom: 20px; /* เว้นช่องว่างระหว่าง row */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .add-product-form-container {
+        width: 90%;
+        padding: 20px;
+    }
+}

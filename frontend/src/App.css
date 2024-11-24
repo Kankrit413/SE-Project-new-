@@ -1,0 +1,265 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffe6eb; /* Light pink background */
+  margin: 0;
+  padding: 0;
+  color: #444;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* App Container */
+.app-container {
+  flex: 1; /* Expand to fit available vertical space */
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* Seamless sections */
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffe6eb;
+  /* padding: px; */
+}
+
+
+.header-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+  /* margin-top: 10px; */
+}
+
+.buttonLog {
+  background-color: #fff2f7;
+  border: 2px solid #ff8aa5;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #ff8aa5;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.buttonLog hover {
+  background-color: #ff8aa5;
+  color: white;
+}
+
+.buttonRe {
+  background-color: #ff8aa5;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttonRe hover {
+  background-color: #ff647c;
+}
+
+/* Search Container */
+.search-container {
+  position: relative; /* กำหนดตำแหน่งเพื่อให้ .search-icon อ้างอิง */
+  width: 80%;
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+/* Search Input */
+.search-input {
+  width: 100%; /* ขยายให้เต็มความกว้างของ parent */
+  padding: 12px 40px 12px 12px; /* เผื่อพื้นที่สำหรับไอคอนทางขวา */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Search Icon */
+.search-icon {
+  position: absolute;
+  right: 10px; /* วางชิดขอบขวาของ input */
+  top: 50%; /* จัดตำแหน่งตรงกลางแนวตั้ง */
+  transform: translateY(-50%); /* ปรับให้ไอคอนอยู่ตรงกลาง */
+  font-size: 18px; /* ขนาดไอคอน */
+  color: #888; /* สีของไอคอน */
+  cursor: pointer; /* เปลี่ยนเมาส์เป็นมือเมื่อ hover */
+}
+
+
+/* Filter Buttons Section */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: white;
+  padding: 10px;
+  border-bottom: 2px solid #ff8aa5;
+}
+
+/* Filter Buttons */
+.filter-button {
+  background-color: #ff8aa5;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.filter-button:hover {
+  background-color: #ff647c;
+  transform: translateY(-3px);
+}
+
+/* Search and Dropdown Filters Section */
+.search-and-filters {
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  background-color: #ff8aa5;
+  padding: 20px;
+}
+
+.filter-dropdown {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 16px;
+  width: 200px;
+}
+
+.search-button {
+  background-color: white;
+  border: 2px solid #ff8aa5;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff8aa5;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #ff8aa5;
+  color: white;
+}
+
+/* Content Section (พื้นหลังproductทังหมด)*/
+.content-container {
+  flex: 1; /* Expand to fit the remaining space */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Allow scrolling for overflow */
+}
+
+.recommendation {
+  flex: 1 1 30%; /* Responsive scaling */
+  min-width: 300px;
+  text-align: center;
+}
+
+.recommendation h2 {
+  color: #ff8aa5;
+  font-size: 22px;
+  text-align: center;
+}
+
+/* Product Section (พื้นหลังของสไลด์product) */
+.product-slider {
+  flex: 2 1 65%;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  scroll-behavior: smooth;
+}
+
+/* กรอบสินค้า */
+.product-item {
+  flex-shrink: 0;
+  width: 150px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  transition: transform 0.2s, box-shadow 0.2s; /* เพิ่มการเปลี่ยนแปลงแบบ smooth */
+  cursor: pointer; /* เปลี่ยนเป็น pointer เมื่อเลื่อนเมาส์ */
+}
+
+.product-item img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #ff8aa5;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 16px;
+  color: #444;
+}
+
+/* Footer Section */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffe6eb;
+  color: #444;
+  font-weight: bold;
+  border-top: 2px solid #ffe6eb;
+}
+
+.advertise-link {
+  text-decoration: none;
+  color: #ff8aa5;
+  transition: color 0.3s ease;
+}
+
+.advertise-link:hover {
+  color: #ff647c;
+}

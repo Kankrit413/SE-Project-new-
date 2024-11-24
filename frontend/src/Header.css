@@ -1,0 +1,136 @@
+.header-container {
+    background-color: #f8d7da; /* สีชมพูอ่อน */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff; /* สีตัวอักษรขาว */
+    flex-wrap: wrap; /* รองรับหน้าจอขนาดเล็ก */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-left .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo-image {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.header-center {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin: 10px 20px; /* เพิ่มระยะห่าง */
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 500px; /* จำกัดขนาด */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* เพิ่มเส้นขอบบาง */
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s ease; /* เพิ่มแอนิเมชัน */
+}
+
+.search-bar:focus {
+    box-shadow: 0 0 8px rgba(255, 105, 135, 0.5); /* เงาเมื่อ focus */
+}
+
+.search-button {
+    background-color: #fff;
+    border: none;
+    color: #f8d7da;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-button:hover {
+    background-color: #ffccd1; /* ชมพูอ่อน */
+    transform: scale(1.05); /* ขยายเล็กน้อย */
+}
+
+.search-button .fa-search {
+    font-size: 1.2rem;
+}
+
+.header-right {
+    margin-left: auto; /* ดันไปขวาสุด */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px; /* ระยะห่างระหว่างปุ่ม */
+}
+
+.header-link {
+    color: #f1f1f1; /* สีขาวอ่อน */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold; /* ตัวหนา */
+    transition: color 0.3s ease;
+}
+
+.header-link:hover {
+    color: #ffccd1; /* ชมพูอ่อนเมื่อ hover */
+}
+
+.cart-icon {
+    color: #fff;
+    margin-left: 20px;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.cart-icon:hover {
+    transform: scale(1.2); /* ขยายขนาดเมื่อ hover */
+    color: #ffccd1; /* ชมพูอ่อน */
+}
+
+/* เพิ่มความ Responsive */
+@media (max-width: 768px) {
+    .header-center {
+        margin: 10px 0;
+        justify-content: center;
+    }
+
+    .search-bar {
+        width: 80%; /* ลดขนาด */
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 10px;
+    }
+
+    .search-bar {
+        width: 100%; /* ใช้เต็มความกว้าง */
+    }
+
+    .header-link, .cart-icon {
+        font-size: 0.9rem; /* ลดขนาด */
+    }
+}
