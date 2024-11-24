@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './UserProducts.css';
+import '../Product/UserProducts.css';
 
 const UserProducts = () => {
     const navigate = useNavigate();
@@ -33,10 +33,10 @@ const UserProducts = () => {
                     {products.map(product => (
                         <div key={product._id} className="product-card">
                             <h3>{product.name}</h3>
-                            <img 
-                                src={`http://localhost:5000${product.imageUrl}`} 
-                                alt={product.name} 
-                                className="product-image" 
+                            <img
+                                src={`http://localhost:5000${product.imageUrl}`}
+                                alt={product.name}
+                                className="product-image"
                             />
                             <p><strong>Price:</strong> ${product.price}</p>
                             <p><strong>Type:</strong> {product.type}</p>

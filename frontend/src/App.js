@@ -1,18 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home';
-import AddProduct from './addproduct';
-import UpdateProduct from './updateproduct';
-import Login from './Login';
-import Register from './Register';
-import AdminPage from './addminpage';
-import DeleteProduct from './deleteproduct';
-import UserProfile from './profile'; // Import UserProfile component
-import ProfilePage from './ProfilePage'; // Import the ProfilePage component
+import Home from './components/Home/Home';
+import AddProduct from './components/Product/addproduct';
+import UpdateProduct from './components/Product/updateproduct';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import AdminPage from './components/AdminPage/addminpage';
+import DeleteProduct from './components/Product/deleteproduct';
+import UserProfile from './components/Profile/profile'; // Import UserProfile component
+import ProfilePage from './components/Profile/ProfilePage'; // Import the ProfilePage component
 import Recommended from './Page2/mainheader';
 import PaymentForm from './Page2/payment';
-import AdvertisingHistory from './advertisinghistory'; // Import the AdvertisingHistory component
-import Notifications from './Notifications'; 
+import AdvertisingHistory from './components/Advertising/advertisinghistory'; // Import the AdvertisingHistory component
+import Notifications from './components/Notifications/Notifications';
+
 const App = () => {
   return (
     <Router>

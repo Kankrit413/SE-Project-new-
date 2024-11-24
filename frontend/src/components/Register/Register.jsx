@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import { BookTextIcon } from 'lucide-react';
-import Header from "./Header.css"
-import './Register.css';
-
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -71,15 +67,8 @@ const Register = () => {
     }
 };
 
-
     return (
-    <div> 
-        <head className='header-container'>
-            <button className='button-home-register' onClick={() => navigate('/Home')}> 
-                Home  
-            </button>
-        </head>
-        <div className="register-container" style={{ margin: '2rem', textAlign: 'center' }}>
+        <div style={{ margin: '2rem', textAlign: 'center' }}>
             <h2>Create a New Account</h2>
             <form onSubmit={handleRegister} style={{ display: 'inline-block', textAlign: 'left', minWidth: '300px' }}>
                 {/* Profile Image Upload Section */}
@@ -132,7 +121,7 @@ const Register = () => {
                 </div>
 
                 <div style={{ marginBottom: '1rem' }}>
-                    <label htmlFor="username" style={{ display: 'block', marginBottom: '0.5rem' }}cla>Username</label>
+                    <label htmlFor="username" style={{ display: 'block', marginBottom: '0.5rem' }}>Username</label>
                     <input
                         type="text"
                         id="username"
@@ -140,8 +129,7 @@ const Register = () => {
                         value={formData.username}
                         onChange={handleChange}
                         required
-                        style={{ padding: '0.8rem', width: '100%', boxSizing: 'border-box' }}
-                        className='form-box'
+                        style={{ padding: '0.5rem', width: '100%', boxSizing: 'border-box' }}
                     />
                 </div>
                 
@@ -154,8 +142,7 @@ const Register = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        style={{ padding: '0.8rem', width: '100%', boxSizing: 'border-box' }} 
-                        className='form-box'
+                        style={{ padding: '0.5rem', width: '100%', boxSizing: 'border-box' }}
                     />
                 </div>
 
@@ -168,8 +155,7 @@ const Register = () => {
                         value={formData.phoneNumber}
                         onChange={handleChange}
                         required
-                        style={{ padding: '0.8rem', width: '100%', boxSizing: 'border-box' }}
-                        className='form-box'
+                        style={{ padding: '0.5rem', width: '100%', boxSizing: 'border-box' }}
                     />
                 </div>
 
@@ -182,8 +168,7 @@ const Register = () => {
                         value={formData.company}
                         onChange={handleChange}
                         required
-                        style={{ padding: '0.8rem', width: '100%', boxSizing: 'border-box' }}
-                        className='form-box'
+                        style={{ padding: '0.5rem', width: '100%', boxSizing: 'border-box' }}
                     />
                 </div>
 
@@ -196,8 +181,7 @@ const Register = () => {
                         value={formData.password}
                         onChange={handleChange}
                         required
-                        style={{ padding: '0.8rem', width: '100%', boxSizing: 'border-box' }}
-                        className='form-box'
+                        style={{ padding: '0.5rem', width: '100%', boxSizing: 'border-box' }}
                     />
                 </div>
 
@@ -205,10 +189,10 @@ const Register = () => {
                     type="submit"
                     style={{
                         padding: '0.5rem 1rem',
-                        backgroundColor: '#FCBABC',
+                        backgroundColor: '#007BFF',
                         color: '#FFF',
                         border: 'none',
-                        borderRadius: '20rem',
+                        borderRadius: '0.25rem',
                         cursor: 'pointer',
                         width: '100%'
                     }}
@@ -220,7 +204,7 @@ const Register = () => {
                 Already have an account? <Link to="/login" style={{ color: '#007BFF' }}>Log in here</Link>.
             </p>
         </div>
-    </div>);
+    );
 };
 
 export default Register;
