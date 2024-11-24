@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ArrowLeft, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './styles.css';
+import '../../styles.css';
 
 const UserProfile = () => {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const UserProfile = () => {
     <div className="min-h-screen flex justify-center items-center bg-gray-100 py-6">
       {/* Main Card */}
       <div className="relative bg-white shadow-lg p-8 w-full max-w-sm rounded-lg flex flex-col items-center space-y-6">
-        
+
         {/* Back Arrow */}
         <ArrowLeft
           className="text-gray-400 w-6 h-6 cursor-pointer hover:scale-110 transition-transform absolute left-4 top-4"
@@ -46,9 +46,9 @@ const UserProfile = () => {
         {/* User Details */}
         <div className="space-y-6 w-full"> {/* เพิ่มระยะห่างระหว่างฟอร์มให้พอดี */}
           {[{ label: 'Username', value: userData?.username },
-            { label: 'Company Name', value: userData?.company },
-            { label: 'Email', value: userData?.email },
-            { label: 'Phone Number', value: userData?.phoneNumber },
+          { label: 'Company Name', value: userData?.company },
+          { label: 'Email', value: userData?.email },
+          { label: 'Phone Number', value: userData?.phoneNumber },
           ].map((field, index) => (
             <div key={index} className="flex flex-col space-y-2"> {/* เพิ่ม space-y-2 สำหรับระยะห่างระหว่าง label และ input */}
               <label className="text-sm text-gray-600">{field.label}</label>
@@ -61,7 +61,7 @@ const UserProfile = () => {
             </div>
           ))}
         </div>
-          
+
         {/* Buttons: Back and Edit */}
         <div className="flex items-center justify-between mt-6 w-full space-x-4">
           {/* Back Button */}
@@ -71,7 +71,7 @@ const UserProfile = () => {
           >
             Back
           </button>
-          
+
           {/* Edit Profile Button */}
         </div>
       </div>

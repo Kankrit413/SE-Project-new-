@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./App.css";
+import "../../App.css";
 import axios from "axios";
 
 const Home = () => {
@@ -36,7 +36,7 @@ const Home = () => {
             }
 
             const response = await axios.get(url);
-            
+
             if (response.data && Array.isArray(response.data)) {
                 setProducts(response.data);
             } else {
@@ -153,19 +153,19 @@ const Home = () => {
 
             {/* ปุ่ม Filter */}
             <div className="filter-container">
-                <button 
+                <button
                     className={`filter-button ${selectedType === "sunscreen" ? "active" : ""}`}
                     onClick={() => handleFilterClick("sunscreen")}
                 >
                     Sunscreen
                 </button>
-                <button 
+                <button
                     className={`filter-button ${selectedType === "cleanser" ? "active" : ""}`}
                     onClick={() => handleFilterClick("cleanser")}
                 >
                     Cleanser
                 </button>
-                <button 
+                <button
                     className={`filter-button ${selectedType === "moisturizer" ? "active" : ""}`}
                     onClick={() => handleFilterClick("moisturizer")}
                 >
