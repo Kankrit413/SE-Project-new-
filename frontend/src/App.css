@@ -21,37 +21,19 @@ body {
 /* Header Section */
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   background-color: #ffe6eb;
-  /* padding: px; */
+  padding: 20px;
 }
 
-
-.header-buttons {
+/* Auth Buttons */
+.auth-buttons {
   display: flex;
-  justify-content: center;
-  gap: 10px; /* ระยะห่างระหว่างปุ่ม */
-  /* margin-top: 10px; */
+  gap: 10px;
 }
 
-.buttonLog {
-  background-color: #fff2f7;
-  border: 2px solid #ff8aa5;
-  padding: 10px 18px;
-  border-radius: 5px;
-  font-weight: bold;
-  color: #ff8aa5;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.buttonLog hover {
-  background-color: #ff8aa5;
-  color: white;
-}
-
-.buttonRe {
+.auth-button.register {
   background-color: #ff8aa5;
   border: none;
   padding: 12px 20px;
@@ -62,38 +44,25 @@ body {
   transition: background-color 0.3s;
 }
 
-.buttonRe hover {
+.auth-button.register:hover {
   background-color: #ff647c;
 }
 
-/* Search Container */
-.search-container {
-  position: relative; /* กำหนดตำแหน่งเพื่อให้ .search-icon อ้างอิง */
-  width: 80%;
-  max-width: 800px;
-  margin: 10px auto;
+.auth-button.login {
+  background-color: #ffe6eb;
+  border: 2px solid #ff8aa5;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #ff8aa5;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Search Input */
-.search-input {
-  width: 100%; /* ขยายให้เต็มความกว้างของ parent */
-  padding: 12px 40px 12px 12px; /* เผื่อพื้นที่สำหรับไอคอนทางขวา */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
+.auth-button.login:hover {
+  background-color: #ff8aa5;
+  color: white;
 }
-
-/* Search Icon */
-.search-icon {
-  position: absolute;
-  right: 10px; /* วางชิดขอบขวาของ input */
-  top: 50%; /* จัดตำแหน่งตรงกลางแนวตั้ง */
-  transform: translateY(-50%); /* ปรับให้ไอคอนอยู่ตรงกลาง */
-  font-size: 18px; /* ขนาดไอคอน */
-  color: #888; /* สีของไอคอน */
-  cursor: pointer; /* เปลี่ยนเมาส์เป็นมือเมื่อ hover */
-}
-
 
 /* Filter Buttons Section */
 .filter-container {
@@ -101,7 +70,7 @@ body {
   justify-content: center;
   gap: 20px;
   background-color: white;
-  padding: 10px;
+  padding: 20px;
   border-bottom: 2px solid #ff8aa5;
 }
 
@@ -109,7 +78,7 @@ body {
 .filter-button {
   background-color: #ff8aa5;
   border: none;
-  padding: 14px 28px;
+  padding: 16px 32px;
   border-radius: 30px;
   font-size: 18px;
   font-weight: bold;
@@ -127,7 +96,6 @@ body {
 /* Search and Dropdown Filters Section */
 .search-and-filters {
   display: flex;
-  height: 20px;
   justify-content: center;
   gap: 30px;
   align-items: center;
@@ -161,7 +129,7 @@ body {
   color: white;
 }
 
-/* Content Section (พื้นหลังproductทังหมด)*/
+/* Content Section */
 .content-container {
   flex: 1; /* Expand to fit the remaining space */
   display: flex;
@@ -185,7 +153,6 @@ body {
   text-align: center;
 }
 
-/* Product Section (พื้นหลังของสไลด์product) */
 .product-slider {
   flex: 2 1 65%;
   display: flex;
@@ -197,16 +164,10 @@ body {
   scroll-behavior: smooth;
 }
 
-/* กรอบสินค้า */
 .product-item {
   flex-shrink: 0;
   width: 150px;
   text-align: center;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
-  transition: transform 0.2s, box-shadow 0.2s; /* เพิ่มการเปลี่ยนแปลงแบบ smooth */
-  cursor: pointer; /* เปลี่ยนเป็น pointer เมื่อเลื่อนเมาส์ */
 }
 
 .product-item img {
@@ -215,51 +176,12 @@ body {
   margin-bottom: 10px;
 }
 
-/* Pagination */
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.pagination button {
-  padding: 8px 16px;
-  border: none;
-  background-color: #ff8aa5;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.pagination button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-.pagination span {
-  font-size: 16px;
-  color: #444;
-}
-
 /* Footer Section */
 .footer {
   text-align: center;
-  padding: 20px;
+  padding: 40px;
   background-color: #ffe6eb;
-  color: #444;
+  color: rgb(0, 0, 0);
   font-weight: bold;
   border-top: 2px solid #ffe6eb;
-}
-
-.advertise-link {
-  text-decoration: none;
-  color: #ff8aa5;
-  transition: color 0.3s ease;
-}
-
-.advertise-link:hover {
-  color: #ff647c;
 }
