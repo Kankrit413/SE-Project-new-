@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import { BookTextIcon } from 'lucide-react';
-import Header from "./Header.css"
-import './Register.css';
-
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -30,7 +26,6 @@ const Register = () => {
         const file = e.target.files[0];
         if (file) {
             setProfileImage(file);
-            // Create preview URL
             const reader = new FileReader();
             reader.onloadend = () => {
                 setImagePreview(reader.result);
@@ -40,54 +35,39 @@ const Register = () => {
     };
 
     const handleRegister = async (e) => {
-    e.preventDefault();
-    
-    try {
-        // Create FormData object to send multipart/form-data
-        const submitFormData = new FormData();
-        
-        // Append all form fields
-        Object.keys(formData).forEach(key => {
-            submitFormData.append(key, formData[key]);
-        });
-        
-        // Append profile image if selected
-        if (profileImage) {
-            submitFormData.append('profileImage', profileImage);
-        }
+        e.preventDefault();
+        try {
+            const submitFormData = new FormData();
+            Object.keys(formData).forEach(key => {
+                submitFormData.append(key, formData[key]);
+            });
 
-        const response = await axios.post('http://localhost:5000/api/register', submitFormData, {
-            headers: {
-                'Content-Type': 'multipart/form-data'
+            if (profileImage) {
+                submitFormData.append('profileImage', profileImage);
             }
-        });
 
-        if (response.status === 201) {
-            alert('Registration successful. You may now log in.');
-            navigate('/Home');  // Redirect to home after successful registration
+            const response = await axios.post('http://localhost:5000/api/register', submitFormData, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            });
+
+            if (response.status === 201) {
+                alert('Registration successful. You may now log in.');
+                navigate('/login'); // เปลี่ยนไปหน้า Login หลังการลงทะเบียนสำเร็จ
+            }
+        } catch (error) {
+            alert(error.response?.data?.message || 'An error occurred during registration. Please try again.');
         }
-    } catch (error) {
-        alert(error.response?.data?.message || 'An error occurred during registration. Please try again.');
-    }
-};
-
+    };
 
     return (
-    <div> 
-        <head className='header-container'>
-            <button className='button-home-register' onClick={() => navigate('/Home')}> 
-                Home  
-            </button>
-        </head>
-        <div className="register-container" style={{ margin: '2rem', textAlign: 'center' }}>
+        <div style={{ margin: '2rem', textAlign: 'center' }}>
             <h2>Create a New Account</h2>
             <form onSubmit={handleRegister} style={{ display: 'inline-block', textAlign: 'left', minWidth: '300px' }}>
-                {/* Profile Image Upload Section */}
                 <div style={{ marginBottom: '1rem', textAlign: 'center' }}>
-                    <div style={{ 
-                        width: '150px', 
-                        height: '150px', 
-                        margin: '0 auto', 
+                    <div style={{
+                        width: '150px',
+                        height: '150px',
+                        margin: '0 auto',
                         border: '2px dashed #ccc',
                         borderRadius: '50%',
                         overflow: 'hidden',
@@ -98,14 +78,10 @@ const Register = () => {
                         backgroundColor: '#f8f9fa'
                     }}>
                         {imagePreview ? (
-                            <img 
-                                src={imagePreview} 
-                                alt="Profile preview" 
-                                style={{
-                                    width: '100%',
-                                    height: '100%',
-                                    objectFit: 'cover'
-                                }}
+                            <img
+                                src={imagePreview}
+                                alt="Profile preview"
+                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                             />
                         ) : (
                             <div style={{ textAlign: 'center', color: '#666' }}>
@@ -132,7 +108,7 @@ const Register = () => {
                 </div>
 
                 <div style={{ marginBottom: '1rem' }}>
-                    <label htmlFor="username" style={{ display: 'block', marginBottom: '0.5rem' }}cla>Username</label>
+                    <label htmlFor="username" style={{ display: 'block', marginBottom: '0.5rem' }}>Username</label>
                     <input
                         type="text"
                         id="username"
@@ -140,8 +116,7 @@ const Register = () => {
                         value={formData.username}
                         onChange={handleChange}
                         required
-                        style={{ padding: '0.8rem', width: '100%', boxSizing: 'border-box' }}
-                        className='form-box'
+                        style={{ padding: '0.5rem', width: '100%', boxSizing: 'border-box' }}
                     />
                 </div>
                 
@@ -154,8 +129,7 @@ const Register = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        style={{ padding: '0.8rem', width: '100%', boxSizing: 'border-box' }} 
-                        className='form-box'
+                        style={{ padding: '0.5rem', width: '100%', boxSizing: 'border-box' }}
                     />
                 </div>
 
@@ -168,8 +142,7 @@ const Register = () => {
                         value={formData.phoneNumber}
                         onChange={handleChange}
                         required
-                        style={{ padding: '0.8rem', width: '100%', boxSizing: 'border-box' }}
-                        className='form-box'
+                        style={{ padding: '0.5rem', width: '100%', boxSizing: 'border-box' }}
                     />
                 </div>
 
@@ -182,8 +155,7 @@ const Register = () => {
                         value={formData.company}
                         onChange={handleChange}
                         required
-                        style={{ padding: '0.8rem', width: '100%', boxSizing: 'border-box' }}
-                        className='form-box'
+                        style={{ padding: '0.5rem', width: '100%', boxSizing: 'border-box' }}
                     />
                 </div>
 
@@ -196,8 +168,7 @@ const Register = () => {
                         value={formData.password}
                         onChange={handleChange}
                         required
-                        style={{ padding: '0.8rem', width: '100%', boxSizing: 'border-box' }}
-                        className='form-box'
+                        style={{ padding: '0.5rem', width: '100%', boxSizing: 'border-box' }}
                     />
                 </div>
 
@@ -205,10 +176,10 @@ const Register = () => {
                     type="submit"
                     style={{
                         padding: '0.5rem 1rem',
-                        backgroundColor: '#FCBABC',
+                        backgroundColor: '#007BFF',
                         color: '#FFF',
                         border: 'none',
-                        borderRadius: '20rem',
+                        borderRadius: '0.25rem',
                         cursor: 'pointer',
                         width: '100%'
                     }}
@@ -220,7 +191,7 @@ const Register = () => {
                 Already have an account? <Link to="/login" style={{ color: '#007BFF' }}>Log in here</Link>.
             </p>
         </div>
-    </div>);
+    );
 };
 
 export default Register;

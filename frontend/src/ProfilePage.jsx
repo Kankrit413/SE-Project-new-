@@ -41,16 +41,16 @@ const UserProfile = () => {
         </div>
 
         {/* Username */}
-        <h2 className="text-lg font-medium text-gray-700 mb-6">{userData?.username || 'User'}</h2> {/* เพิ่มระยะห่างตรงนี้ */}
+        <h2 className="text-lg font-medium text-gray-700 mb-6">{userData?.username || 'User'}</h2>
 
         {/* User Details */}
-        <div className="space-y-6 w-full"> {/* เพิ่มระยะห่างระหว่างฟอร์มให้พอดี */}
+        <div className="space-y-6 w-full">
           {[{ label: 'Username', value: userData?.username },
             { label: 'Company Name', value: userData?.company },
             { label: 'Email', value: userData?.email },
             { label: 'Phone Number', value: userData?.phoneNumber },
           ].map((field, index) => (
-            <div key={index} className="flex flex-col space-y-2"> {/* เพิ่ม space-y-2 สำหรับระยะห่างระหว่าง label และ input */}
+            <div key={index} className="flex flex-col space-y-2">
               <label className="text-sm text-gray-600">{field.label}</label>
               <input
                 type="text"
@@ -73,6 +73,12 @@ const UserProfile = () => {
           </button>
           
           {/* Edit Profile Button */}
+          <button
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg w-1/2 hover:bg-blue-600 transition"
+            onClick={() => navigate(`/edit-profile/${userData?.username}`)} // ไปยังหน้าสำหรับแก้ไขโปรไฟล์
+          >
+            Edit Profile
+          </button>
         </div>
       </div>
     </div>

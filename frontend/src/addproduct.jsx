@@ -12,34 +12,23 @@ const AddProductForm = () => {
     brand: "",
     startDate: "",
     endDate: "",
+    reviewLink: "" // เก็บแค่ลิงค์เดียว
   });
   const [ingredients, setIngredients] = useState([]);
   const [currentIngredient, setCurrentIngredient] = useState("");
-  const [relatedProducts, setRelatedProducts] = useState("");
+  const [relatedProducts, setRelatedProducts] = useState([]);
+  const [currentRelatedProduct, setCurrentRelatedProduct] = useState("");
   const [image, setImage] = useState(null);
   const [selectedPrice, setSelectedPrice] = useState("");
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
-  // Handle changes in text fields
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle file input
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file && !["image/jpeg", "image/png", "image/jpg"].includes(file.type)) {
-      setError("Please upload a valid image file (jpg, jpeg, png).");
-    } else {
-      setError("");
-      setImage(file);
-    }
-  };
-
-  // Handle adding an ingredient
   const handleAddIngredient = () => {
     if (currentIngredient.trim()) {
       if (ingredients.includes(currentIngredient.trim())) {
@@ -52,31 +41,64 @@ const AddProductForm = () => {
     }
   };
 
-  // Handle removing an ingredient
   const handleRemoveIngredient = (index) => {
     const updatedIngredients = ingredients.filter((_, i) => i !== index);
     setIngredients(updatedIngredients);
   };
 
-  // Handle form submission
+  const handleAddRelatedProduct = () => {
+    if (currentRelatedProduct.trim()) {
+      if (relatedProducts.includes(currentRelatedProduct.trim())) {
+        setError("This related product is already added.");
+      } else {
+        setRelatedProducts([...relatedProducts, currentRelatedProduct.trim()]);
+        setCurrentRelatedProduct("");
+        setError("");
+      }
+    }
+  };
+
+  const handleRemoveRelatedProduct = (index) => {
+    const updatedRelatedProducts = relatedProducts.filter((_, i) => i !== index);
+    setRelatedProducts(updatedRelatedProducts);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!selectedPrice) {
       setError("Please select a price option.");
       return;
     }
-
+  
+    // ตรวจสอบว่ามีการเพิ่ม review link หรือไม่
+    if (!formData.reviewLink.trim()) {
+      setError("Please add a review link");
+      return;
+    }
+  
+    // ตรวจสอบว่า reviewLink เป็น URL หรือไม่
+    const urlPattern = /^(https?:\/\/[^\s$.?#].[^\s]*)$/;
+    if (!urlPattern.test(formData.reviewLink.trim())) {
+      setError("Please enter a valid URL.");
+      return;
+    }
+  
     const data = new FormData();
     Object.keys(formData).forEach((key) => {
-      data.append(key, formData[key]);
+      if (key !== 'reviewLink' && formData[key]) {
+        data.append(key, formData[key]);
+      }
     });
+  
+    // ส่ง reviewLinks เป็น array
+    data.append("reviewLinks", JSON.stringify([formData.reviewLink])); // ส่ง reviewLink ในรูปแบบ array
+  
     data.append("ingredients", JSON.stringify(ingredients));
-    data.append("relatedProducts", JSON.stringify(relatedProducts.split(",")));
+    data.append("relatedProducts", JSON.stringify(relatedProducts));
     data.append("productImage", image);
     data.append("selectedPrice", selectedPrice);
-
-    // Add user info (e.g., username) from localStorage
+  
     const loggedInUser = localStorage.getItem("username");
     if (loggedInUser) {
       data.append("addedBy", loggedInUser);
@@ -84,19 +106,22 @@ const AddProductForm = () => {
       alert("Please log in to add a product.");
       return;
     }
-
+  
     try {
-      await axios.post("http://localhost:5000/api/add-product", data, {
+      const response = await axios.post("http://localhost:5000/api/add-product", data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      alert("Product added successfully!");
-      navigate("/payment", { state: { price: selectedPrice === "weekly" ? 1000 : 3000 } });
+  
+      if (response.status === 201) {
+        alert("Product added successfully!");
+        navigate("/payment", { state: { price: selectedPrice === "weekly" ? 1000 : 3000 } });
+      }
     } catch (error) {
       setError("Error adding product. Please try again.");
       console.error("Error adding product:", error);
     }
   };
-
+  
   return (
     <div className="add-product-form-container">
       <button className="close-btn" onClick={() => navigate(-1)}>&times;</button>
@@ -112,6 +137,7 @@ const AddProductForm = () => {
           required
           className="input-field"
         />
+
         <textarea
           name="description"
           placeholder="Product Details"
@@ -119,7 +145,8 @@ const AddProductForm = () => {
           onChange={handleChange}
           required
           className="textarea-field"
-        ></textarea>
+        />
+
         <select
           name="type"
           value={formData.type}
@@ -132,6 +159,7 @@ const AddProductForm = () => {
           <option value="cleanser">Cleanser</option>
           <option value="moisturizer">Moisturizer</option>
         </select>
+
         <input
           type="text"
           name="brand"
@@ -141,6 +169,7 @@ const AddProductForm = () => {
           required
           className="input-field"
         />
+
         <input
           type="number"
           name="price"
@@ -150,6 +179,8 @@ const AddProductForm = () => {
           required
           className="input-field"
         />
+
+        {/* ส่วนของ Ingredients */}
         <div className="ingredients-field">
           <input
             type="text"
@@ -164,7 +195,7 @@ const AddProductForm = () => {
           <ul className="ingredient-list">
             {ingredients.map((ingredient, index) => (
               <li key={index} className="ingredient-item">
-                {ingredient}{" "}
+                {ingredient}
                 <button
                   type="button"
                   onClick={() => handleRemoveIngredient(index)}
@@ -176,18 +207,57 @@ const AddProductForm = () => {
             ))}
           </ul>
         </div>
-        <input
-          type="text"
-          placeholder="Related Products (comma separated)"
-          value={relatedProducts}
-          onChange={(e) => setRelatedProducts(e.target.value)}
-          className="input-field"
-        />
+
+        {/* ส่วนของ Related Products */}
+        <div className="related-products-field">
+          <input
+            type="text"
+            placeholder="Add a related product"
+            value={currentRelatedProduct}
+            onChange={(e) => setCurrentRelatedProduct(e.target.value)}
+            className="input-field"
+          />
+          <button
+            type="button"
+            onClick={handleAddRelatedProduct}
+            className="related-products-btn"
+          >
+            Add Related Product
+          </button>
+          <ul className="related-products-list">
+            {relatedProducts.map((product, index) => (
+              <li key={index} className="related-product-item">
+                {product}
+                <button
+                  type="button"
+                  onClick={() => handleRemoveRelatedProduct(index)}
+                  className="remove-btn"
+                >
+                  Remove
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ส่วนของ Review Link */}
+        <div className="review-links-field">
+          <input
+            type="url"
+            name="reviewLink"
+            placeholder="Add a review link (https://...)"
+            value={formData.reviewLink}
+            onChange={handleChange}
+            className="input-field"
+          />
+        </div>
+
         <input
           type="file"
-          onChange={handleFileChange}
+          onChange={(e) => setImage(e.target.files[0])}
           required
         />
+
         <div className="form-row">
           <button
             type="button"
@@ -204,6 +274,7 @@ const AddProductForm = () => {
             ฿ 3,000 / month
           </button>
         </div>
+
         <button type="submit" className="submit-btn">Add Product</button>
       </form>
     </div>
