@@ -13,7 +13,6 @@ import Recommended from './Page2/mainheader';
 import PaymentForm from './Page2/payment';
 import AdvertisingHistory from './advertisinghistory'; // Import the AdvertisingHistory component
 import Notifications from './Notifications'; 
-
 const App = () => {
   return (
     <Router>
