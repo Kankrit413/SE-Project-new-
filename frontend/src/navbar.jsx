@@ -62,7 +62,7 @@ const Navbar = () => {
           <button className="nav-button" onClick={() => navigate('/profile-page')}>
             View Profile Details
           </button>
-          <button className="nav-button" onClick={() => navigate('/add-product1')}>
+          <button className="nav-button" onClick={() => navigate('/add-product')}>
             Advertising
           </button>
           <button className="nav-button" onClick={() => navigate('/advertising-history')}>
