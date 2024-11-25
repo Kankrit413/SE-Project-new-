@@ -279,22 +279,23 @@ const Home = () => {
 </div>
                 {/* Filter Buttons */}
                 {["sunscreen", "cleanser", "moisturizer"].map((type) => (
-                    <button
-                        key={type}
-                        className={`filter-button ${selectedType === type ? "active" : ""}`}
-                        onClick={() => handleFilterClick(type)}
-                        style={{
-                            padding: "10px 20px",
-                            margin: "0 10px",
-                            border: "none",
-                            borderRadius: "20px",
-                            backgroundColor: selectedType === type ? "#FCBABC" : "#FCBABC",
-                            cursor: "pointer",
-                        }}
-                    >
-                        {type.charAt(0).toUpperCase() + type.slice(1)}
-                    </button>
-                ))}
+    <button
+        key={type}
+        className={`filter-button ${selectedType === type ? "active" : ""}`}
+        onClick={() => handleFilterClick(type)}
+        style={{
+            padding: "10px 20px",
+            margin: "0 10px",
+            border: "none",
+            borderRadius: "20px",
+            backgroundColor: selectedType === type ? "#FBC8C9" : "#FBC8C9",
+            color: "#FFFFFF", // Optional: white text for better readability
+            cursor: "pointer",
+        }}
+    >
+        {type.charAt(0).toUpperCase() + type.slice(1)}
+    </button>
+))}
             </div>
             
             {/* What About Us Section */}
@@ -324,8 +325,7 @@ const Home = () => {
                 <div
                     className="product-item"
                     key={product.id}
-                    onClick={() => goToProductDetail(product._id)}
-                >
+                    onClick={() => goToProductDetail(product._id)}>
                     <img src={product.image} alt={product.name} />
                     <p className="product-name">{product.name}</p>
                     <p className="product-price">{product.price} THB</p>
@@ -336,69 +336,69 @@ const Home = () => {
         )}
     </div>
 </div>
-            <section id="sunscreen" className="products">
-                <h3>Sunscreen</h3>
-                <div className="product-type-slider">
-                    {loading ? (
-                        <p>Loading...</p>
-                    ) : (
-                        products
-                            .filter((product) => product.type === "sunscreen") // กรองสินค้าเฉพาะประเภท sunscreen
-                            .map((product) => (
-                                <div
-                                    className="product-type-item"
-                                    key={product.id}
-                                    onClick={() => goToProductDetail(product._id)}>
-                                    <img src={product.image} alt={product.name} />
-                                    <p className="product-type-name">{product.name}</p>
-                                    <p className="product-type-price">{product.price} THB</p>
-                                </div>
-                            ))
-                    )}
-                </div>
-            </section>
-            <section id="cleanser" className="products">
-                <h3>Cleanser</h3>
-                <div className="product-type-slider">
-                    {loading ? (
-                        <p>Loading...</p>
-                    ) : (
-                        products
-                            .filter((product) => product.type === "cleanser") // กรองสินค้าเฉพาะประเภท cleanser
-                            .map((product) => (
-                                <div
-                                    className="product-type-item"
-                                    key={product.id}
-                                    onClick={() => goToProductDetail(product._id)}>
-                                    <img src={product.image} alt={product.name} />
-                                    <p className="product-type-name">{product.name}</p>
-                                    <p className="product-type-price">{product.price} THB</p>
-                                </div>
-                            ))
-                    )}
-                </div>
-            </section>
-            <section id="moisturizer" className="products">
-                <h3>Moisturizer</h3>
-                <div className="product-type-slider">
-                    {loading ? (
-                        <p>Loading...</p>
-                    ) : (
-                        products
-                            .filter((product) => product.type === "moisturizer") // กรองสินค้าเฉพาะประเภท moisturizer
-                            .map((product) => (
-                                <div
-                                    className="product-type-item"
-                                    key={product.id}
-                                    onClick={() => goToProductDetail(product._id)}>
-                                    <img src={product.image} alt={product.name} />
-                                    <p className="product-type-name">{product.name}</p>
-                                    <p className="product-type-price">{product.price} THB</p>
-                                </div>
-                            ))
-                    )}
-                </div>
-            </section>
+<section id="sunscreen" className="products">
+    <h3>Sunscreen</h3>
+    <div className="product-type-slider">
+        {loading ? (
+            <p>Loading...</p>
+        ) : (
+            products
+                .filter((product) => product.type === "sunscreen")
+                .map((product) => (
+                    <div
+                        className="product-type-item"
+                        key={product.id}
+                        onClick={() => goToProductDetail(product._id)}>
+                        <img src={product.image} alt={product.name} />
+                        <p className="product-type-name">{product.name}</p>
+                        <p className="product-type-price">{product.price} THB</p>
+                    </div>
+                ))
+        )}
+    </div>
+</section>
+<section id="cleanser" className="products">
+    <h3>Cleanser</h3>
+    <div className="product-type-slider">
+        {loading ? (
+            <p>Loading...</p>
+        ) : (
+            products
+                .filter((product) => product.type === "cleanser")
+                .map((product) => (
+                    <div
+                        className="product-type-item"
+                        key={product.id}
+                        onClick={() => goToProductDetail(product._id)}>
+                        <img src={product.image} alt={product.name} />
+                        <p className="product-type-name">{product.name}</p>
+                        <p className="product-type-price">{product.price} THB</p>
+                    </div>
+                ))
+        )}
+    </div>
+</section>
+<section id="moisturizer" className="products">
+    <h3>Moisturizer</h3>
+    <div className="product-type-slider">
+        {loading ? (
+            <p>Loading...</p>
+        ) : (
+            products
+                .filter((product) => product.type === "moisturizer")
+                .map((product) => (
+                    <div
+                        className="product-type-item"
+                        key={product.id}
+                        onClick={() => goToProductDetail(product._id)}>
+                        <img src={product.image} alt={product.name} />
+                        <p className="product-type-name">{product.name}</p>
+                        <p className="product-type-price">{product.price} THB</p>
+                    </div>
+                ))
+        )}
+    </div>
+</section>
             {/* Footer */}
             <footer className="footer">
                 <Link to="/add-product" className="advertise-link">

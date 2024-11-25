@@ -177,7 +177,6 @@ body {
   gap: 20px;
   padding: 30px;
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow-y: auto; /* Allow scrolling for overflow */
 }
 
@@ -207,7 +206,7 @@ h4 {
 }
 
 h3 {
-  background-color: #f9f9f9; /* Set the background color to white */
+  background-color: #ffffff; /* Set the background color to white */
   font-size: 50px;
   padding: 20px;           /* Optional: Add padding for better spacing */
   border-radius: 5px;      /* Optional: Round the edges for a cleaner look */
@@ -215,7 +214,12 @@ h3 {
   text-align: center;      /* Optional: Center the text */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for depth */
   margin: 0; /* Remove top and bottom margin */
-  padding: 10px; /* Keep minimal padding if necessary */
+  padding: 10px; /* Keep mini
+  mal padding if necessary */
+}
+
+.products h3 {
+  color: #FBC8C9; /* Set the color for all section titles */
 }
 
 .recommendation h2 {
@@ -253,7 +257,7 @@ h3 {
   gap: 20px;
   overflow-x: auto;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   border-radius: 10px;
   scroll-behavior: smooth;
 }
@@ -263,8 +267,8 @@ h3 {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  padding: 95px;
-  background-color: #f9f9f9;
+  padding: 100px;
+  background-color: #ffffff;
   border-radius: 10px;
   scroll-behavior: smooth;
 }
@@ -309,7 +313,7 @@ h3 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
-  padding: 50px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -377,18 +381,19 @@ h3 {
 .footer {
   text-align: center;
   padding: 20px;
-  background-color: #ffe6eb;
+  background-color: #FFE5E6;
   color: #444;
   font-weight: bold;
-  border-top: 2px solid #ffe6eb;
+  border-top: 2px solid #FFE5E6;
 }
 
 .advertise-link {
   text-decoration: none;
-  color: #ff8aa5;
+  font-size: 20px;
+  color: #797A7B;
   transition: color 0.3s ease;
 }
 
 .advertise-link:hover {
-  color: #ff647c;
+  color: #797A7B;
 }
