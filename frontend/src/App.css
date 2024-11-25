@@ -189,6 +189,11 @@ body {
   text-align: center;
 }
 
+p {
+  color: #444; /* Set the color for all paragraphs */
+  background-color: white;
+}
+
 h2 {
   background-color: white; /* Set the background color to white */
   padding: 10px;           /* Optional: Add padding for better spacing */
@@ -421,4 +426,13 @@ h3 {
 
 .advertise-link:hover {
   color: #797A7B;
+}
+
+.about-us {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  color: #444;
+  font-weight: bold;
+  border-top: 2px solid #ffffff;
 }
