@@ -338,7 +338,7 @@ const Home = () => {
 </div>
 <section id="sunscreen" className="products">
     <h3>Sunscreen</h3>
-    <div className="product-type-slider">
+    <div className="product-type-slider-sunscreen">
         {loading ? (
             <p>Loading...</p>
         ) : (
@@ -359,7 +359,7 @@ const Home = () => {
 </section>
 <section id="cleanser" className="products">
     <h3>Cleanser</h3>
-    <div className="product-type-slider">
+    <div className="product-type-slider-cleanser">
         {loading ? (
             <p>Loading...</p>
         ) : (
@@ -380,7 +380,7 @@ const Home = () => {
 </section>
 <section id="moisturizer" className="products">
     <h3>Moisturizer</h3>
-    <div className="product-type-slider">
+    <div className="product-type-slider-moisturizer">
         {loading ? (
             <p>Loading...</p>
         ) : (
