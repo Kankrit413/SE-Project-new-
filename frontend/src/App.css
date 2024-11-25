@@ -21,19 +21,37 @@ body {
 /* Header Section */
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   background-color: #ffe6eb;
-  padding: 20px;
+  /* padding: px; */
 }
 
-/* Auth Buttons */
-.auth-buttons {
+
+.header-buttons {
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  /* gap: 10px; ระยะห่างระหว่างปุ่ม */
+  /* margin-top: 10px; */
 }
 
-.auth-button.register {
+.buttonLog {
+  background-color: #fff2f7;
+  border: 2px solid #ff8aa5;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #ff8aa5;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.buttonLog hover {
+  background-color: #ff8aa5;
+  color: white;
+}
+
+.buttonRe {
   background-color: #ff8aa5;
   border: none;
   padding: 12px 20px;
@@ -44,45 +62,65 @@ body {
   transition: background-color 0.3s;
 }
 
-.auth-button.register:hover {
+.buttonRe hover {
   background-color: #ff647c;
 }
 
-.auth-button.login {
-  background-color: #ffe6eb;
-  border: 2px solid #ff8aa5;
-  padding: 10px 18px;
-  border-radius: 5px;
-  font-weight: bold;
-  color: #ff8aa5;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+/* Search Container */
+.search-container {
+  position: relative; /* กำหนดตำแหน่งเพื่อให้ .search-icon อ้างอิง */
+  width: 80%;
+  max-width: 800px;
+  margin: 10px auto;
 }
 
-.auth-button.login:hover {
-  background-color: #ff8aa5;
-  color: white;
+/* Search Input */
+.search-input {
+  width: 100%; /* ขยายให้เต็มความกว้างของ parent */
+  padding: 12px 40px 12px 12px; /* เผื่อพื้นที่สำหรับไอคอนทางขวา */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
 }
+
+.search-input::placeholder {
+  color: #FCBABC; /* Placeholder color */
+}
+
+/* Search Icon */
+.search-icon {
+  position: absolute;
+  right: 10px; /* วางชิดขอบขวาของ input */
+  top: 50%; /* จัดตำแหน่งตรงกลางแนวตั้ง */
+  transform: translateY(-50%); /* ปรับให้ไอคอนอยู่ตรงกลาง */
+  font-size: 18px; /* ขนาดไอคอน */
+  color: #888; /* สีของไอคอน */
+  cursor: pointer; /* เปลี่ยนเมาส์เป็นมือเมื่อ hover */
+}
+
 
 /* Filter Buttons Section */
 .filter-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  background-color: white;
-  padding: 20px;
-  border-bottom: 2px solid #ff8aa5;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* Filter Buttons */
 .filter-button {
   background-color: #ff8aa5;
   border: none;
-  padding: 16px 32px;
+  padding: 14px 28px;
   border-radius: 30px;
   font-size: 18px;
   font-weight: bold;
-  color: white;
+  color: #797A7B;
   text-transform: capitalize;
   cursor: pointer;
   transition: transform 0.2s, background-color 0.3s;
@@ -96,6 +134,7 @@ body {
 /* Search and Dropdown Filters Section */
 .search-and-filters {
   display: flex;
+  height: 20px;
   justify-content: center;
   gap: 30px;
   align-items: center;
@@ -129,8 +168,9 @@ body {
   color: white;
 }
 
-/* Content Section */
+/* Content Section (พื้นหลังproductทังหมด)*/
 .content-container {
+  position: relative;
   flex: 1; /* Expand to fit the remaining space */
   display: flex;
   flex-wrap: wrap;
@@ -147,12 +187,66 @@ body {
   text-align: center;
 }
 
+h2 {
+  background-color: white; /* Set the background color to white */
+  padding: 10px;           /* Optional: Add padding for better spacing */
+  border-radius: 5px;      /* Optional: Round the edges for a cleaner look */
+  margin-top: 0;           /* Optional: Adjust margin if necessary */
+  text-align: center;      /* Optional: Center the text */
+  margin: 0; /* Remove top and bottom margin */
+  padding: 10px; /* Keep minimal padding if necessary */
+}
+
+h4 {
+  background-color: white; /* Set the background color to white */
+  padding: 50px 100px;           /* Optional: Add padding for better spacing */
+  border-radius: 10px;      /* Optional: Round the edges for a cleaner look */
+  margin-top: 0;           /* Optional: Adjust margin if necessary */
+  text-align: bottom left;      /* Optional: Center the text */
+  margin: 0; /* Remove top and bottom margin */
+}
+
+h3 {
+  background-color: #f9f9f9; /* Set the background color to white */
+  font-size: 50px;
+  padding: 20px;           /* Optional: Add padding for better spacing */
+  border-radius: 5px;      /* Optional: Round the edges for a cleaner look */
+  margin-top: 0;           /* Optional: Adjust margin if necessary */
+  text-align: center;      /* Optional: Center the text */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for depth */
+  margin: 0; /* Remove top and bottom margin */
+  padding: 10px; /* Keep minimal padding if necessary */
+}
+
 .recommendation h2 {
-  color: #ff8aa5;
+  color: #ffffff;
   font-size: 22px;
   text-align: center;
 }
 
+.product-recommend-title {
+  color: #FBC8C9; /* Set the title color */
+  text-align: left; /* Center the title horizontally */
+  margin: 0rem 0rem; /* Add some spacing above and below */
+  font-size: 2rem; /* Adjust the font size for emphasis */
+  font-weight: bold; /* Make the text bold for better visibility */
+}
+
+/* Style for "Product" text */
+.product-recommend-title .product {
+  color: #FBC8C9; /* Light pink color */
+  font-size: 4rem; /* Adjust size to make it prominent */
+  display: block; /* Ensure it stands alone */
+}
+
+/* Style for "recommend" text */
+.product-recommend-title .recommend {
+  color: #FBC8C9; /* Same light pink color */
+  font-size: 2rem; /* Smaller size for subtlety */
+  font-weight: normal; /* Lighter weight for distinction */
+}
+
+/* Product Section (พื้นหลังของสไลด์product) */
 .product-slider {
   flex: 2 1 65%;
   display: flex;
@@ -164,24 +258,137 @@ body {
   scroll-behavior: smooth;
 }
 
+.product-type-slider {
+  flex: 2 1 65%;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 95px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  scroll-behavior: smooth;
+}
+
+/* กรอบสินค้า */
 .product-item {
   flex-shrink: 0;
   width: 150px;
-  text-align: center;
+  text-align: left;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px; /* Height to accommodate name, price, and image */
 }
 
+/* Product name styling */
+.product-name {
+  flex-shrink: 0;
+  width: 150px;
+  text-align: left;
+}
+
+/* Product price alignment */
+.product-price {
+  flex-shrink: 0;
+  width: 150px;
+  text-align: right;
+}
+
+.product-type-item {
+  flex-shrink: 0;
+  width: 150px;
+  text-align: left;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px; /* Height to accommodate name, price, and image */
+}
+
+.product-type-name {
+  flex-shrink: 0;
+  width: 150px;
+  text-align: left;
+}
+
+.product-type-price {
+  flex-shrink: 0;
+  width: 150px;
+  text-align: right;
+}
+
+/* Ensures image doesn't affect alignment */
 .product-item img {
   max-width: 100%;
+  height: auto;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+
+/* Product details alignment */
+.product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute space between name and price */
+  flex-grow: 1; /* Ensures it stretches to occupy available space */
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #ff8aa5;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 16px;
+  color: #444;
 }
 
 /* Footer Section */
 .footer {
   text-align: center;
-  padding: 40px;
+  padding: 20px;
   background-color: #ffe6eb;
-  color: rgb(0, 0, 0);
+  color: #444;
   font-weight: bold;
   border-top: 2px solid #ffe6eb;
+}
+
+.advertise-link {
+  text-decoration: none;
+  color: #ff8aa5;
+  transition: color 0.3s ease;
+}
+
+.advertise-link:hover {
+  color: #ff647c;
 }
