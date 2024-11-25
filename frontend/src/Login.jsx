@@ -33,7 +33,7 @@ const Login = () => {
 
     return (
         <div className="login-page">
-            <button className="close-btn-log" onClick={() => navigate(-1)}>&times;</button>
+            <button className="close-btn-log" onClick={() => navigate('/home')}>&times;</button>
             <div className="login-container">
                 <div className="login-image">
                     <img
