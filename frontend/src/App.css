@@ -1,6 +1,9 @@
+/* Import Afacad font */
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+
 /* General Styles */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Afacad', !important; /* Set the default font */
   background-color: #ffe6eb; /* Light pink background */
   margin: 0;
   padding: 0;
@@ -262,7 +265,29 @@ h3 {
   scroll-behavior: smooth;
 }
 
-.product-type-slider {
+.product-type-slider-sunscreen {
+  flex: 2 1 65%;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 150px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  scroll-behavior: smooth;
+}
+
+.product-type-slider-cleanser {
+  flex: 2 1 65%;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 150px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  scroll-behavior: smooth;
+}
+
+.product-type-slider-moisturizer {
   flex: 2 1 65%;
   display: flex;
   gap: 20px;
