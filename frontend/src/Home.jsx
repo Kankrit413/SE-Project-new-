@@ -284,19 +284,19 @@ const Home = () => {
         className={`filter-button ${selectedType === type ? "active" : ""}`}
         onClick={() => handleFilterClick(type)}
         style={{
-            padding: "10px 20px",
+            padding: "10px 100px",
             margin: "0 10px",
             border: "none",
             borderRadius: "20px",
             backgroundColor: selectedType === type ? "#FBC8C9" : "#FBC8C9",
-            color: "#FFFFFF", // Optional: white text for better readability
+            color: "#797A7B", // Optional: white text for better readability
             cursor: "pointer",
         }}
     >
         {type.charAt(0).toUpperCase() + type.slice(1)}
     </button>
 ))}
-            </div>
+            </div> 
             
             {/* What About Us Section */}
             <section className="about-us" style={{ padding: "2rem 1rem", textAlign: "center" }}>
