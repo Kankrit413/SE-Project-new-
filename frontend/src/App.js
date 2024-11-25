@@ -24,18 +24,13 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/add-product" element={<AddProduct />} />
-        <Route path="/update-product/:id" element={<UpdateProduct />} />
-        <Route path="/delete-product/:id" element={<DeleteProduct />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/admin" element={<AdminPage />} />
         <Route path="/profile" element={<UserProfile />} /> {/* Add route for UserProfile */}
         <Route path="/profile-page" element={<ProfilePage />} /> {/* Add route for ProfilePage */}
         <Route path="/edit-profile/:username" element={<EditProfile />} /> {/* Add route for EditProfile */}
-        <Route path="/recommended" element={<Recommended />} />
         <Route path="/payment" element={<PaymentForm />} />
         <Route path="/advertising-history" element={<AdvertisingHistory />} /> {/* Route for Advertising History */}
-        <Route path="/notifications" element={<Notifications />} /> {/* Route for Notifications */}
         <Route path="/Page2/mainheader/:productId" element={<MainHeader />} />
         <Route path="/add-product1" element={<AddProductForm1 />} />
       </Routes>

@@ -21,8 +21,12 @@ const PaymentMethods = () => {
   };
 
   return (
+    <header>
     <div className="payment-container">
       {/* Close Button */}
+      <h1 className="section-title" >
+        Payment 
+      </h1>
       <button className="close-btn" onClick={() => navigate('/')}>
         &times; {/* Navigate to home (root page) */}
       </button>
@@ -31,7 +35,7 @@ const PaymentMethods = () => {
       <div className="payment-wrapper">
         {/* Left Section: Payment Options */}
         <div className="payment-options">
-          <h2>Payment Methods</h2>
+         
           <div className="payment-method">
             <input 
               type="radio" 
@@ -41,7 +45,9 @@ const PaymentMethods = () => {
               onChange={() => handleMethodChange('creditCard')} 
               checked={selectedMethod === 'creditCard'} 
             />
+            <div className='typecontainer'>
             <label htmlFor="creditCard">Credit / Debit Card</label>
+            </div>
           </div>
           <div className="payment-method">
             <input 
@@ -52,7 +58,11 @@ const PaymentMethods = () => {
               onChange={() => handleMethodChange('qrCode')} 
               checked={selectedMethod === 'qrCode'} 
             />
-            <label htmlFor="qrCode">QR Code</label>
+            <div className='typecontainer'>
+            <label htmlFor="qrCode"> 
+              QR Code 
+            </label>
+            </div>
           </div>
         </div>
 
@@ -74,17 +84,18 @@ const PaymentMethods = () => {
               </select>
             </div>
           )}
-
+          <div >
           {selectedMethod === 'qrCode' && (
             <div className="qr-code">
               <h3>Scan QR Code</h3>
               <img 
-                src="https://via.placeholder.com/200" 
+                src="https://qrcode.in.th/wp-content/themes/QR-THEME/page-templates/assets/img/qr-code.svg" 
                 alt="QR Code" 
                 className="qr-code-img" 
               />
             </div>
           )}
+          </div>
         </div>
 
         {/* Right Section: Summary */}
@@ -105,6 +116,7 @@ const PaymentMethods = () => {
         </div>
       </div>
     </div>
+    </header>
   );
 };
 

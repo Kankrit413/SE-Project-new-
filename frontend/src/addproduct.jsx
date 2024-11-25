@@ -300,7 +300,9 @@ const AddProductForm = () => {
             </button>
           </div>
 
-          <button type="submit" className="submit-btn">Add Product</button>
+          <button type="submit" className="submit-btn"> 
+            Add Product 
+          </button>
         </form>
     </div>  
   </header>
