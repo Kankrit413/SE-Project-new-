@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./AddProductForm.css";
-
+import "./AddProductForm.css";   
+import Home from "./Home";
 const AddProductForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -123,8 +123,12 @@ const AddProductForm = () => {
   };
   
   return (
+    <header className="header">
     <div className="add-product-form-container">
+      
+        <div className="add-product-title"><h1>Add Product</h1>  </div>
         <button className="close-btn" onClick={() => navigate(-1)}>&times;</button>
+
         <form onSubmit={handleSubmit} className="add-product-form">
           {error && <div className="error-message">{error}</div>}
 
@@ -157,7 +161,7 @@ const AddProductForm = () => {
                   value={formData.type}
                   onChange={handleChange}
                   required
-                  className="select-field"
+                  className="typefrom"
               >
                   <option value="">
                       Select Type
@@ -290,8 +294,10 @@ const AddProductForm = () => {
 
           <button type="submit" className="submit-btn">Add Product</button>
         </form>
-    </div>
-  );
+    </div>  
+  </header>
+);
+
 };
 
 export default AddProductForm;

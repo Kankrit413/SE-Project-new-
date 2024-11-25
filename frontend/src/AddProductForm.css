@@ -1,14 +1,21 @@
 /* AdminPage container styling */
-body {
-    font-family: "Arial", sans-serif;
-    background-color: #ffe6e6;
-    box-sizing: border-box;
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .add-product-form-container {
+        width: 90%;
+        padding: 20px;
+    }
 }
 
-/* Scope all styles under .add-product-form-container */
+body {
+    background-color: #FEE7E8 !important;
+}
+
+/* พื้นหลังฟอร์ม */
 .add-product-form-container {
-    font-family: Arial, sans-serif;
+    font-family:'Afacad', sans-serif;
     background-color: #fff; /* Form background */
     padding: 30px;
     border-radius: 16px;
@@ -23,7 +30,9 @@ body {
 
 /* Close Button */
 .add-product-form-container .close-btn {
+    font-family:'Afacad', sans-serif;
     position: absolute;
+    padding: 0px;
     top: 8px;
     right: 16px;
     background: #ffb3b3;
@@ -35,60 +44,71 @@ body {
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-    /* text-align: center; */
     line-height: 8px;
-    /* transition: background-color 0.3s ease; */
+    margin-top: 5px;
 }
 
 .add-product-form-container .close-btn:hover {
-    background: #ff8080;
+    background: #FD9296;
+
 }
 
 /* Form Styling */
 .add-product-form-container .add-product-form {
-    margin-top: 50px;
+    font-family:'Afacad', sans-serif;
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Input and Textarea Fields */
+/* ช่องกรอก input */
 .add-product-form-container .input-field,
 .add-product-form-container .textarea-field {
+    font-family:'Afacad', sans-serif;
     width: 100%;
     padding: 12px;
     border: 1px solid #e6e6e6;
     border-radius: 8px;
-    background: #f8f9fa;
-    font-size: 14px;
+    background: #eaebec;
+    font-size: 17px;
     box-sizing: border-box;
 }
 
 .add-product-form-container .textarea-field {
+    font-family:'Afacad', sans-serif;
     height: 100px;
     resize: none;
 }
 
 /* File Upload */
 .add-product-form-container .file-upload {
+    font-family:'Afacad', sans-serif;
+    font-size: 19px;
     display: flex;
     flex-direction: column;
     gap: 8px;
     text-align: center;
-    background-color: #f8f9fa;
-    padding: 20px;
+    background-color: #eaebec;
+    padding: 10px;
     border-radius: 8px;
     border: 1px solid #e6e6e6;
 }
 
 .add-product-form-container .file-upload input[type="file"] {
+    font-family:'Afacad', sans-serif;
+    font-size: 15px;
     cursor: pointer;
+    background-color: #d8dadb;
+    color: #000;
 }
 
 
 /* Submit Button */
 .add-product-form-container .submit-btn {
-    background: #ff8080;
+    font-family:'Afacad', sans-serif;
+    font-size: 17px;
+    background: #FD9296;
     color: #fff;
     border: none;
     padding: 14px;
@@ -101,11 +121,13 @@ body {
 }
 
 .add-product-form-container .submit-btn:hover {
-    background: #ff6666;
+    background: #FD9296;
 }
 
 /* ปุ่มราคา */
 .price-btn {
+    font-family:'Afacad', sans-serif;
+    font-size: 17px;
     flex: 1;
     color: #5d5d5d;
     background-color: #ffdede;
@@ -119,13 +141,13 @@ body {
 
 .price-btn:hover {
     background-color: #ffcccc;
-    border-color: #ff6666;
+    border-color: #FD9296;
 }
 
 .price-btn.selected {
-    background-color: #ff6666; /* สีแดงสำหรับสถานะที่เลือก */
+    background-color: #FD9296; /* สีแดงสำหรับสถานะที่เลือก */
     color: white;
-    /* border-color: #e65555; */
+    /* border-color: #FD9296; */
 }
 
 /* Form Row */
@@ -133,51 +155,77 @@ body {
     display: flex;
     justify-content: space-between; /* ระยะห่างระหว่าง input */
     gap: 20px; /* ระยะห่างระหว่าง input */
-    margin-bottom: 20px; /* เว้นช่องว่างระหว่าง row */
 }
 
 .form-row .input-field {
     flex: 1; /* ให้ช่อง input ขยายตัวตามพื้นที่ */
 }
 
+/* ช่องหรอก */
 .ingredients-field {
+    font-family:'Afacad', sans-serif;
+    font-size: 17px;
     display: flex;
     align-items: baseline;
-    justify-content: space-between; /* ระยะห่างระหว่าง input */
-    gap: 20px; /* ระยะห่างระหว่าง input */
-    /* margin-bottom: 20px; เว้นช่องว่างระหว่าง row */
+    justify-content: space-between; 
+    gap: 30px; 
+    width: 650px;
 }
 
 .ingredients-btn {
-    background: #ff8080;
+    font-family:'Afacad', sans-serif;
+    font-size: 17px;
+    background: #FD9296;
     color: #fff;
+    width: 200px;
+    padding: 7px;
 }
 
 .related-products-field {
+    font-family:'Afacad', sans-serif;
+    font-size: 17px;
     display: flex;
     align-items: baseline;
     justify-content: space-between; /* ระยะห่างระหว่าง input */
     gap: 10px; /* ระยะห่างระหว่าง input */
     /* margin-bottom: 20px; เว้นช่องว่างระหว่าง row */
+    width: 650px;
 }
 
 .related-products-btn {
-    background: #ff8080;
+    font-family:'Afacad', sans-serif;
+    font-size: 17px;
+    background: #FD9296;
     color: #fff;
+    width: 260px;
+    padding: 7px;
 }
 
 
 .form-group {
+    font-family:'Afacad', sans-serif;
     display: flex;
     justify-content: space-between; /* ระยะห่างระหว่าง input */
     gap: 20px; /* ระยะห่างระหว่าง input */
-    margin-bottom: 20px; /* เว้นช่องว่างระหว่าง row */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .add-product-form-container {
-        width: 90%;
-        padding: 20px;
-    }
+.typefrom {
+    font-family:'Afacad', sans-serif;
+    background-color: #FD9296;
+    color: #fff;
+    width: auto;
+    border: none;
+    padding: 5px;
+    height: 45px;
+    margin-top: 8px;
+    font-size: 16px;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.add-product-title {
+    font-family:'Afacad', sans-serif;
+    text-align: center;
+    margin-bottom: 0px;
 }

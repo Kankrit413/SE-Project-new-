@@ -1,5 +1,5 @@
 .header-container {
-    background-color: #f8d7da; /* สีชมพูอ่อน */
+    background-color: #FFE5E6; /* สีชมพูอ่อน */
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -7,7 +7,6 @@
     color: #fff; /* สีตัวอักษรขาว */
     flex-wrap: wrap; /* รองรับหน้าจอขนาดเล็ก */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
-    
 }
 
 .header-top {
@@ -57,7 +56,7 @@
 .search-button {
     background-color: #fff;
     border: none;
-    color: #f8d7da;
+    color: #FFE5E6;
     padding: 10px 15px;
     border-radius: 5px;
     margin-left: 5px;
