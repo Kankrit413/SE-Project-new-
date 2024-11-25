@@ -68,7 +68,7 @@ const Navbar = () => {
           <button className="nav-button" onClick={() => navigate('/advertising-history')}>
             Advertising History
           </button>
-          <button className="nav-button" onClick={navigateToNotifications}>
+          <button className="nav-button" onClick={() => navigate('/Notifications')}>
             Notifications
           </button>
           <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

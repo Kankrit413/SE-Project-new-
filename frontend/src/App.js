@@ -32,7 +32,8 @@ const App = () => {
         <Route path="/payment" element={<PaymentForm />} />
         <Route path="/advertising-history" element={<AdvertisingHistory />} /> {/* Route for Advertising History */}
         <Route path="/Page2/mainheader/:productId" element={<MainHeader />} />
-        <Route path="/add-product1" element={<AddProductForm1 />} />
+        <Route path="/Notifications" element={<Notifications />} />
+
       </Routes>
     </Router>
   );
