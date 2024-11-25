@@ -65,6 +65,7 @@ body {
 /* ช่องกรอก input */
 .add-product-form-container .input-field,
 .add-product-form-container .textarea-field {
+    color: #000;
     font-family:'Afacad', sans-serif;
     width: 100%;
     padding: 12px;
@@ -93,6 +94,7 @@ body {
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #e6e6e6;
+    margin-top: 20px;
 }
 
 .add-product-form-container .file-upload input[type="file"] {
@@ -168,8 +170,8 @@ body {
     display: flex;
     align-items: baseline;
     justify-content: space-between; 
-    gap: 30px; 
-    width: 650px;
+    gap: 10px; 
+    width: 600px;
 }
 
 .ingredients-btn {
@@ -181,6 +183,33 @@ body {
     padding: 7px;
 }
 
+.remove-btn {
+    font-family:'Afacad', sans-serif;
+    font-size: 16px;
+    background: #FD9296;
+    color: #fff;
+    width: auto;
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+}
+
+.ingredient-item {
+    margin-top: 5px;
+    list-style: none
+}
+
+.related-products-list {
+    margin-top: 16px;
+    list-style: none
+}
+
+.related-product-item {
+    margin-top: 5px;
+}
+
+
+
 .related-products-field {
     font-family:'Afacad', sans-serif;
     font-size: 17px;
@@ -189,7 +218,7 @@ body {
     justify-content: space-between; /* ระยะห่างระหว่าง input */
     gap: 10px; /* ระยะห่างระหว่าง input */
     /* margin-bottom: 20px; เว้นช่องว่างระหว่าง row */
-    width: 650px;
+    width: 600px;
 }
 
 .related-products-btn {
@@ -228,4 +257,13 @@ body {
     font-family:'Afacad', sans-serif;
     text-align: center;
     margin-bottom: 0px;
+}
+
+.ingredient-container {
+    /* border: #000 2px solid; */
+    flex-direction: column;
+    width: auto;
+    margin: 0px;    
+    gap: 0px;
+    padding: 0px;
 }

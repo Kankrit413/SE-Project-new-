@@ -202,17 +202,20 @@ const AddProductForm = () => {
             <button type="button" onClick={handleAddIngredient} className="ingredients-btn">
               Add Ingredient
             </button>
+          </div>
+
+          <div className="ingredient-container">
             <ul className="ingredient-list">
               {ingredients.map((ingredient, index) => (
                 <li key={index} className="ingredient-item">
-                  {ingredient}
+                  
                   <button
                     type="button"
                     onClick={() => handleRemoveIngredient(index)}
                     className="remove-btn"
                   >
                     Remove
-                  </button>
+                  </button> {ingredient}
                 </li>
               ))}
             </ul>
@@ -227,6 +230,8 @@ const AddProductForm = () => {
               onChange={(e) => setCurrentRelatedProduct(e.target.value)}
               className="input-field"
             />
+
+          
             <button
               type="button"
               onClick={handleAddRelatedProduct}
@@ -234,28 +239,31 @@ const AddProductForm = () => {
             >
               Add Related Product
             </button>
+            </div>
+            <div className="ingredient-container">
             <ul className="related-products-list">
               {relatedProducts.map((product, index) => (
                 <li key={index} className="related-product-item">
-                  {product}
+                  
                   <button
                     type="button"
                     onClick={() => handleRemoveRelatedProduct(index)}
                     className="remove-btn"
                   >
                     Remove
-                  </button>
+                  </button>   {product}
                 </li>
               ))}
             </ul>
-          </div>
+            </div>
+          
 
           {/* ส่วนของ Review Link */}
           <div className="review-links-field">
             <input
               type="url"
               name="reviewLink"
-              placeholder="Add a review link (https://...)"
+              placeholder="Add link for sale (https://...)"
               value={formData.reviewLink}
               onChange={handleChange}
               className="input-field"
@@ -264,7 +272,7 @@ const AddProductForm = () => {
 
           <div className="form-group file-upload">
               <label htmlFor="file">
-                  Upload a file <i className="fas fa-upload"></i>
+              Upload Image File <i className="fas fa-upload"></i>
               </label>
               <input
                   type="file"
