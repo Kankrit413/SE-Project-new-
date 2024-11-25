@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { ArrowLeft } from 'lucide-react';
-import Navbar from './navbar'; // Assuming you have Navbar component
-import './profilepage.css'; // Assuming custom styles for the profile page
+import Navbar from './navbar';
+import './profilepage.css';
 
 const EditProfile = () => {
   const { username } = useParams();
@@ -13,51 +13,58 @@ const EditProfile = () => {
     company: '',
     email: '',
     phoneNumber: '',
-    profileImage: '', // For profile image
+    profileImage: '',
   });
-  const [profileImageFile, setProfileImageFile] = useState(null); // For storing profile image file
-  const [imagePreview, setImagePreview] = useState(null); // For previewing selected image
+  const [imagePreview, setImagePreview] = useState(null);
+  const [imageFile, setImageFile] = useState(null); // เก็บไฟล์รูปภาพที่ผู้ใช้เลือก
   const [message, setMessage] = useState('');
 
-  // Fetch user data
+  // โหลดข้อมูลผู้ใช้
   useEffect(() => {
     axios
       .get(`/api/users/${username}`)
       .then((response) => {
         setFormData(response.data);
         if (response.data.profileImage) {
-          setImagePreview(response.data.profileImage); // Show current profile image if available
+          setImagePreview(response.data.profileImage); // โหลดรูปโปรไฟล์
         }
       })
       .catch((error) => console.error('Error fetching user data:', error));
   }, [username]);
 
-  // Handle form data change
+  // จัดการการเปลี่ยนค่าในฟิลด์ต่าง ๆ
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
-  // Handle profile image change
+  // จัดการการเปลี่ยนรูปภาพ
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setProfileImageFile(file);
+      setImageFile(file);
       const reader = new FileReader();
-      reader.onloadend = () => {
-        setImagePreview(reader.result); // Show preview of selected image
-      };
+      reader.onload = () => setImagePreview(reader.result);
       reader.readAsDataURL(file);
     }
   };
 
-  // Handle form submission
+  // จัดการการส่งฟอร์ม
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // สร้าง FormData สำหรับส่งข้อมูลรวมรูปภาพ
     const data = new FormData();
-    Object.keys(formData).forEach((key) => data.append(key, formData[key]));
-    if (profileImageFile) {
-      data.append('profileImage', profileImageFile); // Append image file if changed
+    data.append('username', formData.username);
+    data.append('company', formData.company);
+    data.append('email', formData.email);
+    data.append('phoneNumber', formData.phoneNumber);
+
+    if (imageFile) {
+      data.append('profileImage', imageFile);
     }
 
     axios
@@ -66,7 +73,7 @@ const EditProfile = () => {
       })
       .then(() => {
         setMessage('Profile updated successfully!');
-        setTimeout(() => navigate(`/profile/${username}`), 1500); // Redirect to updated profile page
+        setTimeout(() => navigate('/profile-page'), 800);
       })
       .catch((error) => {
         setMessage('Error updating profile. Please try again.');
@@ -76,94 +83,64 @@ const EditProfile = () => {
 
   return (
     <div className="container">
-      {/* Sidebar/Navbar */}
       <Navbar />
-
-      {/* Main Content */}
       <div className="main-content">
         <div className="profile-card">
-          {/* Back Arrow */}
-          <ArrowLeft
-            className="back-arrow"
-            onClick={() => navigate(-1)} // Go back to the previous page
-          />
+          <ArrowLeft className="back-arrow" onClick={() => navigate(-1)} />
+          <h1 className="text-lg font-medium text-gray-700 mb-6">Edit Profile</h1>
+          {message && <p className="text-center text-sm text-green-600">{message}</p>}
 
-          <div className="min-h-screen flex justify-center items-center bg-gray-100 py-6">
-            <div className="bg-white shadow-lg p-8 w-full max-w-md rounded-lg">
-              <h1 className="text-lg font-medium text-gray-700 mb-16 ">Edit Profile</h1>
-
-              {message && <p className="text-center text-sm mb-4 text-green-600">{message}</p>}
-
-              {/* Profile Image */}
-              <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
-                <div
-                  style={{
-                    width: '150px',
-                    height: '150px',
-                    margin: '0 auto',
-                    border: '2px dashed #ccc',
-                    borderRadius: '50%',
-                    overflow: 'hidden',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    position: 'relative',
-                    backgroundColor: '#f8f9fa',
-                  }}
-                >
-                  {imagePreview ? (
-                    <img
-                      src={imagePreview}
-                      alt="Profile preview"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                  ) : (
-                    <div style={{ textAlign: 'center', color: '#666' }}>
-                      <div>Click to upload</div>
-                      <div>profile picture</div>
-                    </div>
-                  )}
-                  <input
-                    type="file"
-                    id="profileImage"
-                    accept="image/*"
-                    onChange={handleImageChange}
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      opacity: 0,
-                      cursor: 'pointer',
-                    }}
-                  />
-                </div>
-              </div>
-
-              {/* Form to edit profile */}
-              <form onSubmit={handleSubmit} className="space-y-4">
-                {['username', 'company', 'email', 'phoneNumber'].map((field, index) => (
-                  <div key={index} className="flex flex-col space-y-2">
-                    <label className="text-sm text-gray-600 capitalize">{field}</label>
-                    <input
-                      type="text"
-                      name={field}
-                      value={formData[field] || ''}
-                      onChange={handleChange}
-                      className="bg-gray-100 px-4 py-2 rounded-lg text-gray-800"
-                    />
-                  </div>
-                ))}
-                <button
-                  type="submit"
-                  className="bg-blue-500 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-600 transition"
-                >
-                  Save Changes
-                </button>
-              </form>
+          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+            <div className="circle-container">
+              {imagePreview ? (
+                <img
+                  src={imagePreview}
+                  alt="Profile preview"
+                  className="profile-image rounded-full w-24 h-24"
+                />
+              ) : (
+                <p className="default-icon">Upload Image</p>
+              )}
             </div>
+            <label
+              htmlFor="imageUpload"
+              className="bg-blue-500 text-white text-sm px-4 py-2 rounded-lg cursor-pointer hover:bg-blue-600"
+              style={{ marginTop: '10px', display: 'inline-block' }}
+            >
+              Edit Image
+            </label>
           </div>
+
+          <form onSubmit={handleSubmit} className="form-container">
+            {['username', 'company', 'email', 'phoneNumber'].map((field) => (
+              <div key={field} className="detail-item">
+                <label>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
+                <input
+                  type="text"
+                  name={field}
+                  value={formData[field] || ''}
+                  onChange={handleChange}
+                  className="input-field"
+                />
+              </div>
+            ))}
+
+            <div className="flex items-center justify-between mt-6 w-full space-x-4">
+              <button
+                type="button"
+                className="bg-gray-500 text-white px-4 py-2 rounded-lg w-1/2 hover:bg-gray-600 transition"
+                onClick={() => navigate(-1)}
+              >
+                Back
+              </button>
+              <button
+                type="submit"
+                className="bg-blue-500 text-white px-4 py-2 rounded-lg w-1/2 hover:bg-blue-600 transition"
+              >
+                Save Changes
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
