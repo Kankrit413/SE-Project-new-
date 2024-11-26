@@ -302,7 +302,7 @@ const Home = () => {
             <section className="about-us" style={{ padding: "2rem 1rem", textAlign: "center" }}>
                 <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>What About Us</h2>
                 <div style={{ maxWidth: "1250px", margin: "0 auto" }}>
-                    <p style={{ fontSize: "1.2rem", lineHeight: "1.8", marginTop: "1rem" }}>
+                    <p style={{ fontSize: "1.2rem", lineHeight: "1.8", marginTop: "1rem"}}>
                         We are a leading platform dedicated to matching your skin with the best products
                         available. Whether you're looking for the perfect sunscreen, a gentle cleanser,
                         or a hydrating moisturizer, we’ve got you covered. Our mission is to help you

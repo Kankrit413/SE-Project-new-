@@ -3,7 +3,7 @@
 
 /* General Styles */
 body {
-  font-family: 'Afacad', !important; /* Set the default font */
+  font-family: 'Afacad' !important; /* Set the default font */
   background-color: #ffe6eb; /* Light pink background */
   margin: 0;
   padding: 0;
@@ -189,7 +189,7 @@ body {
   text-align: center;
 }
 
-p {
+.p1 {
   color: #444; /* Set the color for all paragraphs */
   background-color: white;
 }
