@@ -50,3 +50,13 @@ h6 {
     width: 400px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
+
+  input {
+    padding: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #534747; /* Set text color to a visible dark shade */
+    background-color: #FFFFFF; /* Ensure background remains white */
+}

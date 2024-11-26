@@ -132,7 +132,9 @@ const Register = () => {
                                 width: '100%',
                                 boxSizing: 'border-box',
                                 border: '1px solid #ccc',
-                                borderRadius: '5px'
+                                borderRadius: '5px',
+                                color: '#534747', // Add this for text visibility
+                                backgroundColor: '#FFFFFF' // Ensure background is white
                             }}
                         />
                     </div>
