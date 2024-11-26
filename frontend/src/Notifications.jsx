@@ -14,15 +14,14 @@ const Notifications = () => {
 
   return (
     <div className="container">
-      
       <Navbar />
       <div className="notifications-container">
         <h1 className="notifications-title">Your Notifications</h1>
-        {products?.length === 0 ? (
+        {/* {products.length === 0 ? (
           <div className="no-notifications">
             No new notifications.
           </div>
-        ) : (
+        ) : ( */}
           <div className="notifications-list">
             {products.map((product) => (
               <div key={product._id} className="notification-item">
@@ -37,7 +36,6 @@ const Notifications = () => {
               </div>
             ))}
           </div>
-        )}
 
         <button onClick={handleBack} className="back-button">
           Back
