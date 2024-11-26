@@ -1,9 +1,10 @@
 .user-products-container {
+    font-family:'Afacad';
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #FFE5E6; /* พื้นหลังสีชมพู */
+    background-color: #ffffff; /* พื้นหลังสีชมพู */
     min-height: 100vh;
     width: 100%;
 }

@@ -106,19 +106,20 @@ const Home = () => {
 >
     <div style={{ flex: 1 }}></div>
 
-    <h1
+    <div
         onClick={goToTop}
         style={{
             flex: 1,
             textAlign: "center",
             cursor: "pointer",
             color: "white",
-            fontSize: "2rem",
+            fontSize: "2.2em",
+            fontWeight: "bold",
             margin: 0,
         }}
     >
         Skinmatch
-    </h1>
+    </div>
 
     <div
         className="header-buttons"
@@ -135,7 +136,7 @@ const Home = () => {
             style={{
                 textDecoration: "none",
                 color: "black",
-                fontSize: "14px",
+                fontSize: "1.2em",
                 fontWeight: "500",
                 padding: "0.5rem", // Optional padding for better click area
             }}
@@ -148,7 +149,7 @@ const Home = () => {
                 style={{
                     textDecoration: "none",
                     color: "black",
-                    fontSize: "14px",
+                    fontSize: "1.2em",
                     fontWeight: "500",
                     padding: "0.5rem", // Optional padding for better click area
                 }}
@@ -284,7 +285,7 @@ const Home = () => {
         className={`filter-button ${selectedType === type ? "active" : ""}`}
         onClick={() => handleFilterClick(type)}
         style={{
-            padding: "10px 100px",
+            padding: "8px 90px",
             margin: "0 10px",
             border: "none",
             borderRadius: "20px",

@@ -1,5 +1,5 @@
 /* Import Afacad font */
-@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 /* General Styles */
 body {
@@ -15,6 +15,7 @@ body {
 
 /* App Container */
 .app-container {
+  font-family: 'Afacad' ;
   flex: 1; /* Expand to fit available vertical space */
   display: flex;
   flex-direction: column;
@@ -23,6 +24,7 @@ body {
 
 /* Header Section */
 .header {
+  font-family: 'Afacad' ;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,6 +34,7 @@ body {
 
 
 .header-buttons {
+  font-family: 'Afacad' ;
   display: flex;
   justify-content: center;
   /* gap: 10px; ระยะห่างระหว่างปุ่ม */
@@ -39,6 +42,7 @@ body {
 }
 
 .buttonLog {
+  font-family: 'Afacad' ;
   background-color: #fff2f7;
   border: 2px solid #ff8aa5;
   padding: 10px 18px;
@@ -55,6 +59,7 @@ body {
 }
 
 .buttonRe {
+  font-family: 'Afacad' ;
   background-color: #ff8aa5;
   border: none;
   padding: 12px 20px;
@@ -71,6 +76,7 @@ body {
 
 /* Search Container */
 .search-container {
+  font-family: 'Afacad' ;
   position: relative; /* กำหนดตำแหน่งเพื่อให้ .search-icon อ้างอิง */
   width: 80%;
   max-width: 800px;
@@ -79,6 +85,7 @@ body {
 
 /* Search Input */
 .search-input {
+  font-family: 'Afacad' ;
   width: 100%; /* ขยายให้เต็มความกว้างของ parent */
   padding: 12px 40px 12px 12px; /* เผื่อพื้นที่สำหรับไอคอนทางขวา */
   border: 1px solid #ccc;
@@ -92,6 +99,7 @@ body {
 
 /* Search Icon */
 .search-icon {
+  font-family: 'Afacad' ;
   position: absolute;
   right: 10px; /* วางชิดขอบขวาของ input */
   top: 50%; /* จัดตำแหน่งตรงกลางแนวตั้ง */
@@ -104,6 +112,7 @@ body {
 
 /* Filter Buttons Section */
 .filter-container {
+  font-family: 'Afacad' ;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -117,11 +126,12 @@ body {
 
 /* Filter Buttons */
 .filter-button {
+  font-family: 'Afacad' ;
   background-color: #ff8aa5;
   border: none;
-  padding: 14px 28px;
+  padding: 14px 25px;
   border-radius: 30px;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   color: #797A7B;
   text-transform: capitalize;
@@ -136,6 +146,7 @@ body {
 
 /* Search and Dropdown Filters Section */
 .search-and-filters {
+  font-family: 'Afacad' ;
   display: flex;
   height: 20px;
   justify-content: center;
@@ -146,6 +157,7 @@ body {
 }
 
 .filter-dropdown {
+  font-family: 'Afacad' ;
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -155,6 +167,7 @@ body {
 }
 
 .search-button {
+  font-family: 'Afacad' ;
   background-color: white;
   border: 2px solid #ff8aa5;
   padding: 12px 24px;
@@ -173,6 +186,7 @@ body {
 
 /* Content Section (พื้นหลังproductทังหมด)*/
 .content-container {
+  font-family: 'Afacad' ;
   position: relative;
   flex: 1; /* Expand to fit the remaining space */
   display: flex;
@@ -184,6 +198,7 @@ body {
 }
 
 .recommendation {
+  font-family: 'Afacad' ;
   flex: 1 1 30%; /* Responsive scaling */
   min-width: 300px;
   text-align: center;
@@ -214,6 +229,7 @@ h4 {
 }
 
 .h3-container {
+  font-family:'Afacad';
   background-color: #ffffff; /* This acts as the "margin color" */
   padding: 10px; /* Space inside the container */
   border-radius: 10px; /* Optional: Round corners for smoother appearance */
@@ -412,6 +428,7 @@ h4 {
 
 /* Footer Section */
 .footer {
+  font-family:'Afacad';
   text-align: center;
   padding: 10px;
   background-color: #FFE5E6;

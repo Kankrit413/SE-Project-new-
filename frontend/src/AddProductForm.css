@@ -30,7 +30,7 @@ body {
 
 /* Close Button */
 .add-product-form-container .close-btn {
-    font-family:'Afacad', sans-serif;
+    font-family:'Afacad',sans-serif;
     position: absolute;
     padding: 0px;
     top: 8px;
@@ -154,17 +154,20 @@ body {
 
 /* Form Row */
 .form-row {
+    font-family:'Afacad';
     display: flex;
     justify-content: space-between; /* ระยะห่างระหว่าง input */
     gap: 20px; /* ระยะห่างระหว่าง input */
 }
 
 .form-row .input-field {
+    font-family:'Afacad';
     flex: 1; /* ให้ช่อง input ขยายตัวตามพื้นที่ */
 }
 
 /* ช่องหรอก */
 .ingredients-field {
+    font-family:'Afacad';
     font-family:'Afacad', sans-serif;
     font-size: 17px;
     display: flex;
@@ -175,7 +178,7 @@ body {
 }
 
 .ingredients-btn {
-    font-family:'Afacad', sans-serif;
+    font-family:'Afacad';
     font-size: 17px;
     background: #FD9296;
     color: #fff;
@@ -211,7 +214,7 @@ body {
 
 
 .related-products-field {
-    font-family:'Afacad', sans-serif;
+    font-family:'Afacad';
     font-size: 17px;
     display: flex;
     align-items: baseline;
@@ -260,6 +263,7 @@ body {
 }
 
 .ingredient-container {
+    font-family:'Afacad';
     /* border: #000 2px solid; */
     flex-direction: column;
     width: auto;

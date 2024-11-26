@@ -1,23 +1,27 @@
 /* ProductList.css */
 
 .product-list-container {
+    font-family: 'Afacad' ;
     padding: 20px;
     background-color: #f5f5f5;
 }
 
 .product-list-title {
+    font-family: 'Afacad' ;
     font-size: 2rem;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .product-grid {
+    font-family: 'Afacad' ;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
 
 .product-card {
+    font-family: 'Afacad' ;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -36,28 +40,33 @@
 }
 
 .product-info {
+    font-family: 'Afacad' ;
     padding: 15px;
 }
 
 .product-name {
+    font-family: 'Afacad' ;
     font-size: 1.2rem;
     color: #333;
     margin: 10px 0;
 }
 
 .product-description {
+    font-family: 'Afacad' ;
     font-size: 0.9rem;
     color: #666;
     margin-bottom: 10px;
 }
 
 .product-ingredients {
+    font-family: 'Afacad' ;
     font-size: 0.8rem;
     color: #888;
     margin-bottom: 15px;
 }
 
 .product-price {
+    font-family: 'Afacad' ;
     font-size: 1rem;
     font-weight: bold;
     color: #e91e63;
@@ -65,6 +74,7 @@
 }
 
 .buy-now-button {
+    font-family: 'Afacad' ;
     background-color: #ff5722;
     color: #fff;
     border: none;
@@ -80,6 +90,7 @@
 }
 
 .filter-buttons {
+    font-family: 'Afacad' ;
     display: flex;
     justify-content: center;
     margin: 20px 0;

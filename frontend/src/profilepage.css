@@ -1,5 +1,6 @@
 /* Container for the layout */
 .container {
+    font-family: 'Afacad' ;
     display: flex;
     min-height: 100vh;
     font-family: Arial, sans-serif;
@@ -7,6 +8,7 @@
   
   /* Sidebar/Navbar Styles */
   .navbar {
+    font-family: 'Afacad' ;
     width: 250px;
     background-color: #ffe6e6;
     color: white;
@@ -18,6 +20,7 @@
   
   /* Profile Card */
   .profile-card {
+    font-family: 'Afacad' ;
     background-color: #ffe6e6;
     width: 100%;
     max-width: 600px;
@@ -31,6 +34,7 @@
   /* Profile Image */
   .circle-container {
     display: flex;
+    font-family: 'Afacad' ;
     justify-content: center;
     margin-bottom: 15px;
   }
@@ -43,6 +47,7 @@
   }
   
   .default-icon {
+    font-family: 'Afacad' ;
     width: 96px;
     height: 96px;
     color: #ffffff;
@@ -50,6 +55,7 @@
   
   /* Username */
   .text {
+    font-family: 'Afacad' ;
     font-size: 1.5rem;
     font-weight: bold;
     color: #2d3748;
@@ -59,6 +65,7 @@
   /* User Details */
   .detail-item {
     display: grid;
+    font-family: 'Afacad' ;
     grid-template-columns: 150px 1fr; /* กำหนด 2 คอลัมน์: Label และ Input */
     align-items: center; /* จัดแนว Label และ Input ให้อยู่กึ่งกลาง */
     gap: 10px 20px; /* ระยะห่างระหว่างแถวและคอลัมน์ */
@@ -66,13 +73,16 @@
   }
   
   .detail-item label {
+    font-family: 'Afacad' ;
     text-align: right; /* จัด Label ชิดขวา */
-    font-size: 0.9rem;
+    font-size: 1.1em;
     color: #777;
     padding-right: 10px; /* เพิ่มระยะห่างระหว่าง Label กับ Input */
   }
   
   .detail-item input {
+    font-family: 'Afacad' ;
+    font-size: 1em;
     width: 80%; /* ปรับให้ Input ขยายเต็มพื้นที่ */
     padding: 10px;
     border: 1px solid #ddd;
@@ -81,11 +91,13 @@
     color: #333;
   }
   .text-sm {
-    font-size: 0.9rem;
+    font-family: 'Afacad' ;
+    font-size: 1em;
     color: #ffffff;
   }
   
   input {
+    font-family: 'Afacad' ;
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -96,11 +108,13 @@
   }
   
   input[readonly] {
+    font-family: 'Afacad' ;
     background-color: #ffffff;
   }
   
   /* Buttons */
   button {
+    font-family: 'Afacad' ;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -112,11 +126,15 @@
   }
   
   .bg-gray-500 {
+    font-family: 'Afacad' ;
+    font-size: 1em;
     background-color: #6b7280;
     color: white;
   }
   
   .bg-blue-500 {
+    font-family: 'Afacad' ;
+    font-size: 1em;
     background-color: #ffadb5;
     color: white;
   }
@@ -131,6 +149,7 @@
   
   /* Back Arrow */
   .back-arrow {
+    font-family: 'Afacad' ;
     font-size: 1.5rem;
     color: #4a4a4a;
     cursor: pointer;
@@ -139,6 +158,7 @@
   
   /* Spacing for buttons */
   .flex {
+    font-family: 'Afacad' ;
     display: flex;
     justify-content: space-between;
     gap: 20px;

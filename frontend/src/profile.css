@@ -1,5 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+boay{
+  font-family: 'Afacad' !important;
+}
 /* พื้นที่พื้นหลังหลัก */
 .profile-page-container {
+    font-family: 'Afacad' ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,6 +18,7 @@
   
   /* การ์ดโปรไฟล์ */
   .profile-card1 {
+    font-family: 'Afacad' ;
     background-color: #fff;
     width: 100%;
     max-width: 800px;
@@ -23,6 +32,7 @@
   
   /* ปุ่มย้อนกลับ */
   .back-arrow {
+    font-family: 'Afacad' ;
     position: absolute;
     top: 16px;
     left: 16px;
@@ -38,6 +48,7 @@
   
   /* รูปโปรไฟล์ */
   .circle-container {
+    font-family: 'Afacad' ;
     margin: 16px auto;
     width: 96px;
     height: 96px;
@@ -50,6 +61,7 @@
   }
   
   .profile-image {
+    font-family: 'Afacad' ;
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -57,13 +69,15 @@
   }
   
   .default-icon {
+    font-family: 'Afacad' ;
     font-size: 48px;
     color: #ff799a;
   }
   
   /* ชื่อผู้ใช้งาน */
   .profile-username {
-    font-size: 18px;
+    font-family: 'Afacad' ;
+    font-size: 25px;
     font-weight: 500;
     color: #4a4a4a;
     margin: 16px 0;
@@ -71,6 +85,7 @@
   
   /* กล่องปุ่ม */
 .button-container {
+    font-family: 'Afacad' ;
     display: flex;
     flex-wrap: wrap; /* เพื่อให้ปุ่มเลื่อนลงแถวใหม่หากพื้นที่ไม่พอ */
     justify-content: center; /* จัดกึ่งกลางแนวนอน */
@@ -80,12 +95,13 @@
   
   /* ปุ่มทั่วไป */
   .action-button {
+    font-family: 'Afacad' ;
     background-color: rgba(255, 121, 154, 0.2); /* สีชมพูจาง */
     color: #ff799a;
     border: 2px solid transparent;
     border-radius: 12px;
     padding: 12px 24px; /* ขยายขนาดปุ่มให้เหมาะกับแนวนอน */
-    font-size: 14px;
+    font-size: 20px;
     cursor: pointer;
     transition: transform 0.2s ease, border-color 0.2s ease;
     flex: 1; /* ให้ปุ่มมีขนาดสมดุลใน Flexbox */
@@ -101,12 +117,13 @@
   
   /* ปุ่มออกจากระบบ */
   .logout-button {
+    font-family: 'Afacad' ;
     background-color: #ff4d4f;
     color: #fff;
     border: none;
     border-radius: 12px;
     padding: 12px 24px;
-    font-size: 14px;
+    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.2s ease;
     flex: 1;
@@ -121,16 +138,17 @@
   
   /* ปุ่มกลับหน้าแรก */
   .return-button {
+    font-family: 'Afacad' ;
     background-color: #aaa;
     color: #fff;
     border: none;
     border-radius: 12px;
     padding: 12px 24px;
-    font-size: 14px;
+    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.2s ease;
     flex: 1;
-    max-width: 150px;
+    max-width: 180px;
     text-align: center;
   }
   
