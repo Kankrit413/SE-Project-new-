@@ -16,7 +16,6 @@ import PaymentForm from './Page2/payment';
 import AdvertisingHistory from './advertisinghistory'; // Import the AdvertisingHistory component
 import Notifications from './Notifications'; 
 import MainHeader from "./Page2/mainheader";
-import AddProductForm1 from './addproduct1'; 
 import PaymentSuccessful from "./Page2/paymentsuccessful";
 
 
@@ -35,8 +34,8 @@ const App = () => {
         <Route path="/payment" element={<PaymentForm />} />
         <Route path="/advertising-history" element={<AdvertisingHistory />} /> {/* Route for Advertising History */}
         <Route path="/Page2/mainheader/:productId" element={<MainHeader />} />
-        <Route path="/add-product1" element={<AddProductForm1 />} />
         <Route path="/paymentsuccessful" element={<PaymentSuccessful />} />
+        <Route path="/Notifications" element={<Notifications />} />
       </Routes>
     </Router>
   );

@@ -410,6 +410,7 @@ const Home = () => {
     )}
   </div>
 </section>
+
             {/* Footer */}
             <footer className="footer">
                 <Link to="/add-product" className="advertise-link">

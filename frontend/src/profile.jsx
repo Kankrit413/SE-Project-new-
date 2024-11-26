@@ -70,7 +70,7 @@ const UserProfile = () => {
           </button>
           <button
             className="action-button"
-            onClick={() => navigate('/add-product1')}
+            onClick={() => navigate('/add-product')}
           >
             Advertising
           </button>

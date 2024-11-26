@@ -14,6 +14,7 @@ const Notifications = () => {
 
   return (
     <div className="container">
+      
       <Navbar />
       <div className="notifications-container">
         <h1 className="notifications-title">Your Notifications</h1>
