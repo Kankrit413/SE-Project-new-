@@ -163,7 +163,7 @@ const Home = () => {
                     style={{
                         textDecoration: "none",
                         color: "black",
-                        fontSize: "14px",
+                        fontSize: "1.2em",
                         fontWeight: "500",
                         padding: "0.5rem",
                     }}
@@ -175,7 +175,7 @@ const Home = () => {
                     style={{
                         textDecoration: "none",
                         color: "black",
-                        fontSize: "14px",
+                        fontSize: "1.2em",
                         fontWeight: "500",
                         padding: "0.5rem",
                     }}

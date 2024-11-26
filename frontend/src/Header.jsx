@@ -42,7 +42,7 @@ const Header = ({ onSearch }) => {
                 </div>
                 <div className="header-right">
                     {username ? (
-                        <>
+                        <div>
                             {/* ลิงก์ไปหน้าโปรไฟล์ */}
                             <Link to="/profile" className="header-link">
                                 Hello, {username}
@@ -55,13 +55,13 @@ const Header = ({ onSearch }) => {
                             <button onClick={handleLogout} className="logout-button">
                                 Logout
                             </button>
-                        </>
+                        </div>
                     ) : (
-                        <>
+                        <div >
                             <Link to="/login" className="header-link">Login</Link>
                             <span> | </span>
                             <Link to="/register" className="header-link">Sign Up</Link>
-                        </>
+                        </div>
                     )}
                 </div>
             </div>
