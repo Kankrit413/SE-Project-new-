@@ -13,7 +13,7 @@ const Home = () => {
     const navigate = useNavigate();
     
     useEffect(() => {
-        const loggedInUser = localStorage.getItem("username");
+        const loggedInUser = localStorage.getItem("username"); 
         if (loggedInUser) {
             setUsername(loggedInUser);
         }
@@ -318,23 +318,24 @@ const Home = () => {
         <span className="recommend"> recommend</span>
     </h4>
     <div className="product-slider">
-        {loading ? (
-            <div>Loading...</div>
-        ) : products.length > 0 ? (
-            products.map((product) => (
-                <div
-                    className="product-item"
-                    key={product.id}
-                    onClick={() => goToProductDetail(product._id)}>
-                    <img src={product.image} alt={product.name} />
-                    <p className="product-name">{product.name}</p>
-                    <p className="product-price">{product.price} THB</p>
-                </div>
-            ))
-        ) : (
-            <div>No products found</div>
-        )}
-    </div>
+    {loading ? (
+        <div>Loading...</div>
+    ) : products.length > 0 ? (
+        products.map((product) => (
+            <div
+                className="product-item"
+                key={product.id}
+                onClick={() => goToProductDetail(product._id)}
+            >
+                <img src={product.imageUrl} alt={product.name} /> {/* Updated here */}
+                <p className="product-name">{product.name}</p>
+                <p className="product-price">{product.price} THB</p>
+            </div>
+        ))
+    ) : (
+        <div>No products found</div>
+    )}
+</div>
 </div>
 <section id="sunscreen" className="products">
   <div className="h3-container">
@@ -342,23 +343,23 @@ const Home = () => {
   </div>
   <div className="product-type-slider-sunscreen">
     {loading ? (
-      <p>Loading...</p>
+        <p>Loading...</p>
     ) : (
-      products
-        .filter((product) => product.type === "sunscreen")
-        .map((product) => (
-          <div
-            className="product-type-item"
-            key={product.id}
-            onClick={() => goToProductDetail(product._id)}
-          >
-            <img src={product.image} alt={product.name} />
-            <p className="product-type-name">{product.name}</p>
-            <p className="product-type-price">{product.price} THB</p>
-          </div>
-        ))
+        products
+            .filter((product) => product.type === "sunscreen")
+            .map((product) => (
+                <div
+                    className="product-item"
+                    key={product.id}
+                    onClick={() => goToProductDetail(product._id)}
+                >
+                    <img src={product.imageUrl} alt={product.name} /> {/* Updated here */}
+                    <p className="product-type-name">{product.name}</p>
+                    <p className="product-type-price">{product.price} THB</p>
+                </div>
+            ))
     )}
-  </div>
+</div>
 </section>
 
 <section id="cleanser" className="products">
@@ -367,23 +368,23 @@ const Home = () => {
   </div>
   <div className="product-type-slider-cleanser">
     {loading ? (
-      <p>Loading...</p>
+        <p>Loading...</p>
     ) : (
-      products
-        .filter((product) => product.type === "cleanser")
-        .map((product) => (
-          <div
-            className="product-type-item"
-            key={product.id}
-            onClick={() => goToProductDetail(product._id)}
-          >
-            <img src={product.image} alt={product.name} />
-            <p className="product-type-name">{product.name}</p>
-            <p className="product-type-price">{product.price} THB</p>
-          </div>
-        ))
+        products
+            .filter((product) => product.type === "cleanser")
+            .map((product) => (
+                <div
+                    className="product-item"
+                    key={product.id}
+                    onClick={() => goToProductDetail(product._id)}
+                >
+                    <img src={product.imageUrl} alt={product.name} /> {/* Updated here */}
+                    <p className="product-type-name">{product.name}</p>
+                    <p className="product-type-price">{product.price} THB</p>
+                </div>
+            ))
     )}
-  </div>
+</div>
 </section>
 
 <section id="moisturizer" className="products">
@@ -392,23 +393,23 @@ const Home = () => {
   </div>
   <div className="product-type-slider-moisturizer">
     {loading ? (
-      <p>Loading...</p>
+        <p>Loading...</p>
     ) : (
-      products
-        .filter((product) => product.type === "moisturizer")
-        .map((product) => (
-          <div
-            className="product-type-item"
-            key={product.id}
-            onClick={() => goToProductDetail(product._id)}
-          >
-            <img src={product.image} alt={product.name} />
-            <p className="product-type-name">{product.name}</p>
-            <p className="product-type-price">{product.price} THB</p>
-          </div>
-        ))
+        products
+            .filter((product) => product.type === "moisturizer")
+            .map((product) => (
+                <div
+                    className="product-item"
+                    key={product.id}
+                    onClick={() => goToProductDetail(product._id)}
+                >
+                    <img src={product.imageUrl} alt={product.name} /> {/* Updated here */}
+                    <p className="product-type-name">{product.name}</p>
+                    <p className="product-type-price">{product.price} THB</p>
+                </div>
+            ))
     )}
-  </div>
+</div>
 </section>
 
             {/* Footer */}

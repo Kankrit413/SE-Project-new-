@@ -30,7 +30,6 @@ body {
   /* padding: px; */
 }
 
-
 .header-buttons {
   display: flex;
   justify-content: center;
@@ -215,15 +214,15 @@ h4 {
 
 .h3-container {
   background-color: #ffffff; /* This acts as the "margin color" */
-  padding: 10px; /* Space inside the container */
-  border-radius: 10px; /* Optional: Round corners for smoother appearance */
+  padding: 0.5px; /* Space inside the container */
+  border-radius:0px; /* Optional: Round corners for smoother appearance */
   margin: 0px 0; /* Space outside the container */
 }
 
 .h3-container h3 {
   background-color: #ffffff; /* Background color for the h3 itself */
-  padding: 10px; /* Padding inside the h3 */
-  border-radius: 5px; /* Optional: Round edges */
+  padding: 00px; /* Padding inside the h3 */
+  border-radius: 0px; /* Optional: Round edges */
   color: #444; /* Text color */
   font-size: 50px; /* Font size */
   text-align: center; /* Center the text */
@@ -268,7 +267,7 @@ h4 {
   gap: 20px;
   overflow-x: auto;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 10px;
   scroll-behavior: smooth;
 }
@@ -278,9 +277,8 @@ h4 {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  padding: 50px;
-  background-color: #ffffff;
-  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
   scroll-behavior: smooth;
 }
 
@@ -289,9 +287,8 @@ h4 {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  padding: 50px;
-  background-color: #ffffff;
-  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
   scroll-behavior: smooth;
 }
 
@@ -300,17 +297,17 @@ h4 {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  padding: 50px;
-  background-color: #ffffff;
-  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
   scroll-behavior: smooth;
 }
 
 /* กรอบสินค้า */
+/* Product Item */
 .product-item {
   flex-shrink: 0;
-  width: 150px;
-  text-align: left;
+  width: 200px; /* Increased width for better spacing */
+  text-align: center;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -320,9 +317,8 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 250px; /* Height to accommodate name, price, and image */
+  height: 350px; /* Adjust height to accommodate content */
 }
-
 /* Product name styling */
 .product-name {
   flex-shrink: 0;
@@ -335,22 +331,6 @@ h4 {
   flex-shrink: 0;
   width: 150px;
   text-align: right;
-}
-
-.product-type-item {
-  flex-shrink: 0;
-  width: 150px;
-  text-align: left;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-  cursor: pointer;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 250px; /* Height to accommodate name, price, and image */
 }
 
 .product-type-name {
@@ -368,7 +348,8 @@ h4 {
 /* Ensures image doesn't affect alignment */
 .product-item img {
   max-width: 100%;
-  height: auto;
+  height: 150px; /* Set consistent image height */
+  object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
 }
