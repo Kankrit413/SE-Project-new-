@@ -213,17 +213,20 @@ h4 {
   margin: 0; /* Remove top and bottom margin */
 }
 
-h3 {
-  background-color: #ffffff; /* Set the background color to white */
-  font-size: 50px;
-  padding: 20px;           /* Optional: Add padding for better spacing */
-  border-radius: 5px;      /* Optional: Round the edges for a cleaner look */
-  margin-top: 0;           /* Optional: Adjust margin if necessary */
-  text-align: center;      /* Optional: Center the text */
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for depth */
-  margin: 0; /* Remove top and bottom margin */
-  padding: 10px; /* Keep mini
-  mal padding if necessary */
+.h3-container {
+  background-color: #ffffff; /* This acts as the "margin color" */
+  padding: 10px; /* Space inside the container */
+  border-radius: 10px; /* Optional: Round corners for smoother appearance */
+  margin: 0px 0; /* Space outside the container */
+}
+
+.h3-container h3 {
+  background-color: #ffffff; /* Background color for the h3 itself */
+  padding: 10px; /* Padding inside the h3 */
+  border-radius: 5px; /* Optional: Round edges */
+  color: #444; /* Text color */
+  font-size: 50px; /* Font size */
+  text-align: center; /* Center the text */
 }
 
 .products h3 {
@@ -275,7 +278,7 @@ h3 {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  padding: 150px;
+  padding: 50px;
   background-color: #ffffff;
   border-radius: 10px;
   scroll-behavior: smooth;
@@ -286,7 +289,7 @@ h3 {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  padding: 150px;
+  padding: 50px;
   background-color: #ffffff;
   border-radius: 10px;
   scroll-behavior: smooth;
@@ -297,7 +300,7 @@ h3 {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  padding: 100px;
+  padding: 50px;
   background-color: #ffffff;
   border-radius: 10px;
   scroll-behavior: smooth;
@@ -410,7 +413,7 @@ h3 {
 /* Footer Section */
 .footer {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   background-color: #FFE5E6;
   color: #444;
   font-weight: bold;
