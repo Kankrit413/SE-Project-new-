@@ -112,7 +112,12 @@ const PaymentMethods = () => {
             <span>Total</span>
             <span>฿{price}</span> {/* Display the total price */}
           </div>
-          <button className="continue-button">Continue</button>
+          <button
+  className="continue-button"
+  onClick={() => navigate("/paymentsuccessful")}
+>
+  Continue
+</button>
         </div>
       </div>
     </div>

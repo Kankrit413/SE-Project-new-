@@ -1,0 +1,84 @@
+.payment-success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffe5e6;
+  }
+  
+  .payment-success-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    width: 450px;
+  }
+  
+  .success-icon {
+    margin-bottom: 20px;
+  }
+  
+  .success-icon svg {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 30px;
+  }
+  
+  .payment-info {
+    margin-bottom: 20px;
+  }
+  
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dotted #ddd;
+  }
+  
+  .label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #797a7b;
+  }
+  
+  .value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+  }
+  
+  .pdf-button,
+  .back-home-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .pdf-button {
+    background-color: #ffffff;
+    color: #797a7b;
+    border: 1px solid #d6d6d6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .back-home-button {
+    background-color: #ff6f8e;
+    color: white;
+  }
+  
+  .pdf-button:hover,
+  .back-home-button:hover {
+    opacity: 0.9;
+  }
+  
