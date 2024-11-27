@@ -317,7 +317,11 @@ const Home = () => {
             
             {/* What About Us Section */}
             <section className="about-us" style={{ padding: "2rem 1rem", textAlign: "center" }}>
+<<<<<<< HEAD
                 <h2 style={{ fontFamily: "Afacad, sans-serif", fontSize: "2rem", fontWeight: "bold" }}>What About Us</h2>
+=======
+                <h2 style={{ fontFamily:'Afacad' , fontSize: "2rem", fontWeight: "bold" }}>What About Us</h2>
+>>>>>>> f21ccb469e98019336e9a7e1ecb652155e8e89aa
                 <div style={{ maxWidth: "1250px", margin: "0 auto" }}>
                     <p style={{ fontFamily: "Afacad, sans-serif", fontSize: "1.2rem", lineHeight: "1.8", marginTop: "1rem"}}>
                         We are a leading platform dedicated to matching your skin with the best products
