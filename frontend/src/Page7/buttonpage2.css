@@ -29,7 +29,6 @@
 
 /* ปุ่มเลือกประเภทสินค้า */
 .category-buttons {
-    border: none;
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -50,16 +49,6 @@
     width: auto;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 0;
-}
-
-.button-type-new{
-    border: 3px solid #FCBABC; 
-    background-color: white;
-    color: #ff9a9e;
-    font-size: 1.2em; 
-    border-radius: 30px; 
-    padding: 2px 15px; 
-    font-weight: bold;
 }
 
 /* ปุ่มสประเภทเมื่อนำเมาสืไปจิ้มเเล้วจะเปลี่ยนสี */

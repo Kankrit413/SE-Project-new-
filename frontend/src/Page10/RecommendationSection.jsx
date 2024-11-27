@@ -10,48 +10,48 @@ const RecommendationSection = () => {
   
     // สินค้าแนะนำแบ่งตามประเภท
     const recommendations = {
-      cleanser: [
+      sunscreen: [
         {
           id: 1,
-          name: "Calendula Deep Cleansing Foaming Face Wash",
-          price: "฿890 (75 ml)",
-          image: "http://surl.li/xrtupx", // เปลี่ยนเป็นรูปภาพตัวอย่าง
+          name: "Biore UV Aqua Rich Watery Essence",
+          price: "฿357 (50 g)",
+          image: "https://medias.watsons.co.th/publishing/WTCTH-222865-swatch-zoom.jpg?version=1716886987", // เปลี่ยนเป็นรูปภาพตัวอย่าง
           ingredients: {
-            "Calendula Flower Extract": "ช่วยปลอบประโลมผิวและลดการระคายเคือง",
-            "Glycerin": "ช่วยคงความชุ่มชื้นของผิวและทำให้ผิวเนียนนุ่ม",
+            "Royal Jelly Extract": "บำรุงผิวให้นุ่มชุ่มชื้น",
+            "Hyaluronic Acid": "เติมความชุ่มชื้นให้ผิว",
           },
           buyLink:
-            "https://www.kiehls.co.th/th_TH/skincare/face-cleansers-scrubs/calendula-deep-cleansing-foaming-face-wash/512.html?dwvar_512_size=75%20ML",
+            "https://www.watsons.co.th/th/%E0%B8%84%E0%B8%A3%E0%B8%B5%E0%B8%A1%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B9%81%E0%B8%94%E0%B8%94-biore-%E0%B8%9A%E0%B8%B5%E0%B9%82%E0%B8%AD%E0%B9%80%E0%B8%A3-%E0%B8%A2%E0%B8%B9%E0%B8%A7%E0%B8%B5-%E0%B8%AD%E0%B8%B0%E0%B8%84%E0%B8%A7%E0%B8%B2-%E0%B8%A3%E0%B8%B4%E0%B8%8A-%E0%B8%A7%E0%B8%AD%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%A3%E0%B8%B5-%E0%B9%80%E0%B8%AD%E0%B8%AA%E0%B9%80%E0%B8%8B%E0%B9%87%E0%B8%99%E0%B8%AA%E0%B9%8C-spf50-pa-50-%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%A1/p/BP_222865",
           CombinedResults:
-            "เมื่อใช้คู่กัน ผิวจะเนียนนุ่ม ชุ่มชื้น กระจ่างใสขึ้น ลดโอกาสของการระคายเคืองจากแสงแดดและปัจจัยภายนอก",
+            "เมื่อใช้คู่กัน ลดสิวและคงความชุ่มชื้นในผิว ตัวโฟมช่วยเตรียมผิวให้พร้อมสำหรับการทากันแดด",
         },
         {
           id: 2,
-          name: "Acne Care Solution Cleanser",
-          price: "฿259 (150 ml)",
-          image: "https://clearnose.co.th/wp-content/uploads/2017/12/CNW_v1.png",
+          name: "CANMAKE Mermaid Skin Gel UV",
+          price: "฿275 (40 ml)",
+          image: "https://medias.watsons.co.th/publishing/WTCTH-260447-back-zoom.jpg?version=1716881411",
           ingredients: {
-            "Salicylic Acid": "ช่วยทำความสะอาดรูขุมขน ลดการสะสมสิ่งสกปรก",
-            "Green Tea Extract": "ช่วยลดการอักเสบและมีสารต้านอนุมูลอิสระ",
+            "Aloe Vera Extract": "ลดการอักเสบและเพิ่มความชุ่มชื้น",
+            "Collagen": "ช่วยให้ผิวดูอิ่มฟูและแข็งแรง",
           },
-          buyLink: "https://example.com/acne-care-cleanser",
+          buyLink: "https://www.watsons.co.th/th/%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B9%81%E0%B8%94%E0%B8%94%E0%B9%80%E0%B8%99%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%88%E0%B8%A5-canmake-%E0%B9%81%E0%B8%84%E0%B8%99%E0%B9%80%E0%B8%A1%E0%B8%84-%E0%B9%80%E0%B8%A1%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%A1%E0%B8%94-%E0%B8%AA%E0%B8%81%E0%B8%B4%E0%B8%99-%E0%B9%80%E0%B8%88%E0%B8%A5-%E0%B8%A2%E0%B8%B9%E0%B8%A7%E0%B8%B5-spf50-pa-40%E0%B8%81.-01/p/BP_260447",
           CombinedResults:
-            "เมื่อใช้คู่กัน ลดการเกิดสิวและช่วยทำให้ผิวมีความชุ่มชื้น ผิวจะดูเรียบเนียนพร้อมรับการปกป้องจากแสงแดดอย่างเต็มที่",
+            "เมื่อใช้คู่กัน ปรับสมดุลผิว ลดการอักเสบและเพิ่มความชุ่มชื้น",
         },
       ],
-      moisturizer: [
+      cleanser: [
         {
           id: 3,
           name: "Moisturising Cream",
-          price: "฿199",
+          price: "฿199 (50 g)",
           image: "https://down-th.img.susercontent.com/file/th-11134201-7rasb-m2mo91vszfyr30.webp",
           ingredients: {
-            "Ceramides": "ช่วยฟื้นฟูเกราะป้องกันผิว ลดการสูญเสียน้ำ",
-            "Hyaluronic Acid": "ช่วยเติมความชุ่มชื้นและกักเก็บน้ำในผิว",
+            "Ceramides": "ฟื้นฟูเกราะป้องกันผิว",
+            "Hyaluronic Acid": "กักเก็บความชุ่มชื้นในผิว",
           },
           buyLink: "https://shopee.co.th/%E0%B9%80%E0%B8%8B%E0%B8%A3%E0%B8%B2%E0%B8%A7%E0%B8%B5-CERAVE-Moisturising-Cream-%E0%B8%84%E0%B8%A3%E0%B8%B5%E0%B8%A1%E0%B8%9A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B8%9C%E0%B8%B4%E0%B8%A7%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%9C%E0%B8%B4%E0%B8%A7%E0%B8%81%E0%B8%B2%E0%B8%A2-%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%9C%E0%B8%B4%E0%B8%A7%E0%B9%81%E0%B8%AB%E0%B9%89%E0%B8%87%E0%B8%A1%E0%B8%B2%E0%B8%81-50g.-i.121205602.1867293688?referer=aHR0cHM6Ly90aC5teS1iZXN0LmNvbS8%3D&sp_atk=5c4ac331-3c22-4e63-931e-70e9057cabab&user_agent=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEzMC4wLjAuMCBTYWZhcmkvNTM3LjM2&utm_campaign=-&utm_content=thmybest_presses_50106&utm_medium=affiliates&utm_source=an_15297270000&utm_term=c1jah7897buh&xptdk=5c4ac331-3c22-4e63-931e-70e9057cabab",
           CombinedResults:
-            "เมื่อใช้คู่กัน Zinc Oxide ในกันแดดช่วยป้องกันการระคายเคืองจากรังสียูวี Niacinamide ในกันแดดและมอยส์เจอร์ช่วยลดการอักเสบของผิว ",
+            "เมื่อใช้คู่กัน ช่วยทำความสะอาดผิวโดยไม่ทำให้ผิวแห้งตึง พร้อมเพิ่มความชุ่มชื้น",
         },
         {
           id: 4,
@@ -92,8 +92,8 @@ const RecommendationSection = () => {
 
         {/* ปุ่มเลือกประเภทสินค้า */}
         <div className="category-buttons">
-            <button className='button-type-new'onClick={() => setCategory("cleanser")}>Cleanser</button>
-            <button className='button-type-new'onClick={() => setCategory("moisturizer")}>Moisturizer</button>
+            <button className='button-type-new' onClick={() => setCategory("sunscreen")}>Sunscreen</button>
+            <button className='button-type-new' onClick={() => setCategory("cleanser")}>Cleanser</button>
         </div>
 
         {/* แสดงสินค้าแนะนำ */}

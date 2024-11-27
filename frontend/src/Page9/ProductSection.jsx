@@ -11,28 +11,29 @@ const ProductSection = () => {
 
             {/* ประเภทของสินค้า */}
             <div className="new-product-type">
-                Sunscreen
+                cleanser
             </div>
             {/* ข้อมูลสินค้า */}
             <div className="new-product-card">
                 {/* รูปสินค้า */}
                 <div className="new-product-card img">
-                <img src=" https://medias.watsons.co.th/publishing/WTCTH-298224-swatch-zoom.jpg?version=1716887832" alt="Clear Nose UV Sun Serum"/>
+                <img src=" https://www.konvy.com/static/team/2024/0517/17159382005339_600x600.jpg" alt="Clear Nose UV Sun Serum"/>
                 </div>
                 <div className="new-products-text-box">
                     {/* ชื่อสินค้า */}
-                    <div className="name-prodeuct">Clear Nose UV Sun Serum</div>
+                    <div className="name-prodeuct"> Gentle Foaming Cleanser 
+                    </div>
                     {/* ราคา */}
-                    <div className="price"> Price: ฿589 (40 ml)</div> 
+                    <div className="price"> Price: ฿ 579  ( 236 ml)</div> 
                     {/* ส่วนผสม */}
                     <div className="Ingredients"><strong> Key Ingredients: </strong>
                     <div>
-                        Zinc Oxide, Titanium Dioxide : <br/>
-                        ทำหน้าที่ปกป้องผิวจากรังสี UVA และ UVB โดยเฉพาะสำหรับผิวที่มีปัญหาสิว
+                        Glycerin, Aloe Vera Extract : <br/>
+                        ช่วยปลอบประโลมผิวและลดการระคายเคือง เติมความชุ่มชื้นและลดการแห้งตึง
                     </div>
                     </div>
                 </div>
-                <button className="new-buy-button" onClick={() => window.location.href = 'https://shorturl.asia/W6ynO'}>
+                <button className="new-buy-button" onClick={() => window.location.href = ' https://www.konvy.com/cetaphil/cetaphil-gentle-foaming-cleanser-236ml-48351.html?cstrackid=a6be98f1-cab2-4cf5-ae54-35e549e0f145'}>
                     BUY IT NOW
                 </button>
             </div>

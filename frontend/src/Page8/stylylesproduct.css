@@ -1,0 +1,153 @@
+/* Recommendation Card เฉยๆ */
+/* รูปสินค้า */
+.new-recommendation-card img{
+    width: 150px; 
+    height:320px; /* กำหนดความสูง */
+    object-fit: cover; /* ตัดภาพให้พอดีกับขนาดที่กำหนด */
+    float: right;
+
+}
+
+
+
+.new-Recommended-text-box{
+    font-family: 'Afacad', sans-serif;
+    width: 500px;
+    height: 190px;
+    text-align: center;
+    padding: 15px;  /* เพิ่มระยะห่างด้านในกรอบ */
+    margin-left : 0px; /* เพิ่มระยะห่างรอบนอก */
+    margin-right: 150px;
+    background-color: #ffffff; /* สีพื้นหลัง */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    line-height: 1.5; /* เพิ่มระยะห่างระหว่างบรรทัด */
+    border: #ffffff 2px solid;
+}
+
+.new-combined {
+    height: 50px;  
+    width: 510px; 
+    padding:  5px 15px 0px 15px;
+    background-color: #FFE6E6;
+}
+
+
+/* Product เฉยๆ ------------------------*/ 
+
+.new-product-card img {
+    width: 150px; 
+    height:320px;
+    object-fit: cover; /* ตัดภาพให้พอดีกับขนาดที่กำหนด */
+    float: left;  
+    border: #ffffff 2px solid;
+    
+}
+
+/* การ์ด Productอันใน */
+
+/* .new-product-card{
+    flex: 0 0 150px;
+    padding: 10 px;
+    height: 10px;
+    text-align: center;
+    margin-top: 0px;
+    border:#0000 2px solid; 
+    background-color: #7b34c8;
+    transition: none,
+} */
+
+/* กรอบประเภท ของ Product */
+.new-product-type {
+    font-family: 'Afacad', sans-serif;
+    font-weight: bold;
+    display: inline-block; /* กรอบปรับตามขนาดข้อความ */
+    padding: 2px 15px; 
+    border: 3px solid #FCBABC; 
+    border-radius: 30px; 
+    background-color: #ffffff; 
+    color: #FCBABC; 
+    font-size: 1.2em; 
+    text-align: center; 
+    margin-bottom: 10px;
+}
+.new-products-text-box{
+    font-family: 'Afacad', sans-serif;
+
+    width: 500px;
+    height: 240px;
+    text-align: center;
+    padding: 15px; 
+    margin-left : 160px; 
+    background-color: #ffffff; /* สีพื้นหลัง */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    line-height: 1.5; /* เพิ่มระยะห่างระหว่างบรรทัด */
+    border: #ffffff 2px solid;
+}
+
+
+
+/* ใช้ด้วยกัน */
+/*  แบ่งพื้นที่ 2 ฝั่งสินค้าล่างสุด */
+
+.name-prodeuct{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.header-detail{
+    font-size: 0.7cm;
+    margin-bottom: 2px; 
+    font-weight: bold;
+
+}
+
+.Ingredients{
+    text-align: left;
+    font-size: 1em;
+}
+
+.new-product-section,
+.new-recommendation-section {
+    padding: 15px;
+    background-color: #ffffff;
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    height: 400px;
+    width: 750px;
+    border: #d86241 7 px solid ;
+    }
+
+/* การ์ดสินค้าและแนะนํา */
+.recommendation-card,
+.product-card {
+    background-color: #28c64a;
+    width: 800px;
+    height: 400px;
+    /* overflow: hidden;  เนื้อหาที่เกินขอบเขตของ */
+    margin: 10px;
+}
+/* หัวข้อ */
+.product-section h2,
+.recommendation-section h2 {
+    color: #ff6f61;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* ชื่อสินค้า */
+.recommendation-card h3,
+.product-card h3 {
+    font-size: 1em;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* ขนาดและสีของราคา */
+.recommendation-card .price,
+.product-card .price {
+    color: #ff6f61;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+

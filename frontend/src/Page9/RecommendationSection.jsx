@@ -10,62 +10,61 @@ const RecommendationSection = () => {
   
     // สินค้าแนะนำแบ่งตามประเภท
     const recommendations = {
-      cleanser: [
+      sunscreen: [
         {
           id: 1,
-          name: "Calendula Deep Cleansing Foaming Face Wash",
-          price: "฿890 (75 ml)",
-          image: "http://surl.li/xrtupx", // เปลี่ยนเป็นรูปภาพตัวอย่าง
+          name: "Clear Nose UV Sun Serum",
+          price: "฿589 (80 ml)",
+          image: "https://medias.watsons.co.th/publishing/WTCTH-298224-swatch-zoom.jpg?version=1716887832", // เปลี่ยนเป็นรูปภาพตัวอย่าง
           ingredients: {
-            "Calendula Flower Extract": "ช่วยปลอบประโลมผิวและลดการระคายเคือง",
-            "Glycerin": "ช่วยคงความชุ่มชื้นของผิวและทำให้ผิวเนียนนุ่ม",
+            "Niacinamide": "ลดการอักเสบและควบคุมความมัน",
+            "Zinc Oxide": "ช่วยป้องกันรังสี UV และลดการอักเสบ",
           },
           buyLink:
-            "https://www.kiehls.co.th/th_TH/skincare/face-cleansers-scrubs/calendula-deep-cleansing-foaming-face-wash/512.html?dwvar_512_size=75%20ML",
+            "https://www.google.com/url?q=https://www.watsons.co.th/th/%25E0%25B8%2584%25E0%25B8%25A3%25E0%25B8%25B5%25E0%25B8%25A1%25E0%25B8%2581%25E0%25B8%25B1%25E0%25B8%2599%25E0%25B9%2581%25E0%25B8%2594%25E0%25B8%2594-clear-nose-%25E0%25B9%2580%25E0%25B8%2584%25E0%25B8%25A5%25E0%25B8%25B5%25E0%25B8%25A2%25E0%25B8%25A3%25E0%25B9%258C-%25E0%25B9%2582%25E0%25B8%2599%25E0%25B8%25AA-%25E0%25B8%25A2%25E0%25B8%25B9%25E0%25B8%25A7%25E0%25B8%25B5-%25E0%25B8%258B%25E0%25B8%25B1%25E0%25B8%2599-%25E0%25B9%2580%25E0%25B8%258B%25E0%25B8%25A3%25E0%25B8%25B1%25E0%25B9%2588%25E0%25B8%25A1-%25E0%25B9%2580%25E0%25B8%25AD%25E0%25B8%25AA%25E0%25B8%259E%25E0%25B8%25B5%25E0%25B9%2580%25E0%25B8%25AD%25E0%25B8%259F50-%25E0%25B8%259E%25E0%25B8%25B5%25E0%25B9%2580%25E0%25B8%25AD-80-%25E0%25B8%25A1%25E0%25B8%25A5./p/BP_298224&sa=D&source=docs&ust=1732646105290465&usg=AOvVaw23Lbb1dFeLD63tItvfLbfP",
           CombinedResults:
-            "เมื่อใช้คู่กัน ผิวจะเนียนนุ่ม ชุ่มชื้น กระจ่างใสขึ้น ลดโอกาสของการระคายเคืองจากแสงแดดและปัจจัยภายนอก",
+            "เมื่อใช้คู่กัน โฟมล้างหน้าช่วยลดการระคายเคืองและคงความชุ่มชื้นให้ผิว ",
         },
         {
           id: 2,
-          name: "Acne Care Solution Cleanser",
-          price: "฿259 (150 ml)",
-          image: "https://clearnose.co.th/wp-content/uploads/2017/12/CNW_v1.png",
+          name: "Anessa Perfect UV Sunscreen Skincare Milk",
+          price: "฿729 (60 ml)",
+          image: "https://medias.watsons.co.th/publishing/WTCTH-309592-front-zoom.jpg?version=1729019423 ",
           ingredients: {
-            "Salicylic Acid": "ช่วยทำความสะอาดรูขุมขน ลดการสะสมสิ่งสกปรก",
-            "Green Tea Extract": "ช่วยลดการอักเสบและมีสารต้านอนุมูลอิสระ",
+            "Super Hyaluronic Acid": " เติมความชุ่มชื้นให้ผิว",
+            "Collagen": "ช่วยให้ผิวดูอิ่มฟูและแข็งแรง",
           },
-          buyLink: "https://example.com/acne-care-cleanser",
+          buyLink: "https://www.watsons.co.th/th/%E0%B8%AD%E0%B9%80%E0%B8%99%E0%B8%AA%E0%B8%8B%E0%B9%88%E0%B8%B2-%E0%B9%80%E0%B8%9E%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%9F%E0%B8%84-%E0%B8%A2%E0%B8%B9%E0%B8%A7%E0%B8%B5-%E0%B8%8B%E0%B8%B1%E0%B8%99%E0%B8%AA%E0%B8%81%E0%B8%A3%E0%B8%B5%E0%B8%99-%E0%B8%AA%E0%B8%81%E0%B8%B4%E0%B8%99%E0%B9%81%E0%B8%84%E0%B8%A3%E0%B9%8C-%E0%B8%A1%E0%B8%B4%E0%B8%A5%E0%B8%84%E0%B9%8C-%E0%B9%80%E0%B8%AD%E0%B9%87%E0%B8%99%E0%B9%80%E0%B8%AD-%E0%B9%80%E0%B8%AD%E0%B8%AA%E0%B8%9E%E0%B8%B5%E0%B9%80%E0%B8%AD%E0%B8%9F-50-%E0%B8%9E%E0%B8%B5%E0%B9%80%E0%B8%AD-60-%E0%B8%A1%E0%B8%A5./p/BP_309592",
           CombinedResults:
-            "เมื่อใช้คู่กัน ลดการเกิดสิวและช่วยทำให้ผิวมีความชุ่มชื้น ผิวจะดูเรียบเนียนพร้อมรับการปกป้องจากแสงแดดอย่างเต็มที่",
+            "เมื่อใช้คู่กัน เหมาะสำหรับผู้ที่อยู่กลางแจ้ง โฟมล้างหน้าช่วยลดการสะสมของความมัน ",
         },
       ],
       moisturizer: [
         {
           id: 3,
           name: "Moisturising Cream",
-          price: "฿199",
+          price: "฿199 (50 g)",
           image: "https://down-th.img.susercontent.com/file/th-11134201-7rasb-m2mo91vszfyr30.webp",
           ingredients: {
-            "Ceramides": "ช่วยฟื้นฟูเกราะป้องกันผิว ลดการสูญเสียน้ำ",
-            "Hyaluronic Acid": "ช่วยเติมความชุ่มชื้นและกักเก็บน้ำในผิว",
+            "Ceramides": "ฟื้นฟูเกราะป้องกันผิว",
+            "Hyaluronic Acid": "กักเก็บความชุ่มชื้นในผิว",
           },
           buyLink: "https://shopee.co.th/%E0%B9%80%E0%B8%8B%E0%B8%A3%E0%B8%B2%E0%B8%A7%E0%B8%B5-CERAVE-Moisturising-Cream-%E0%B8%84%E0%B8%A3%E0%B8%B5%E0%B8%A1%E0%B8%9A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B8%9C%E0%B8%B4%E0%B8%A7%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%9C%E0%B8%B4%E0%B8%A7%E0%B8%81%E0%B8%B2%E0%B8%A2-%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%9C%E0%B8%B4%E0%B8%A7%E0%B9%81%E0%B8%AB%E0%B9%89%E0%B8%87%E0%B8%A1%E0%B8%B2%E0%B8%81-50g.-i.121205602.1867293688?referer=aHR0cHM6Ly90aC5teS1iZXN0LmNvbS8%3D&sp_atk=5c4ac331-3c22-4e63-931e-70e9057cabab&user_agent=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEzMC4wLjAuMCBTYWZhcmkvNTM3LjM2&utm_campaign=-&utm_content=thmybest_presses_50106&utm_medium=affiliates&utm_source=an_15297270000&utm_term=c1jah7897buh&xptdk=5c4ac331-3c22-4e63-931e-70e9057cabab",
           CombinedResults:
-            "เมื่อใช้คู่กัน Zinc Oxide ในกันแดดช่วยป้องกันการระคายเคืองจากรังสียูวี Niacinamide ในกันแดดและมอยส์เจอร์ช่วยลดการอักเสบของผิว ",
+            "เมื่อใช้คู่กัน ช่วยทำความสะอาดผิวโดยไม่ทำให้ผิวแห้งตึง พร้อมเพิ่มความชุ่มชื้น",
         },
         {
           id: 4,
-          name: "Effaclar DUO+M",
-          price: "฿210",
-          image: "https://down-th.img.susercontent.com/file/th-11134201-7r990-lwlqo8dzbgqrc2.webp",
+          name: "Intensive Moisture Care Intensive Moisture Cream",
+          price: "฿815  (40 g)",
+          image: "https://medias.watsons.co.th/publishing/WTCTH-265683-front-zoom.jpg?version=1716797372",
           ingredients: {
-            "Niacinamide": "ลดการอักเสบของสิวและรอยแดง",
-            "Procerad": "ลดรอยดำและรอยแดงหลังการเกิดสิว",
-            "Zinc PCA": "ควบคุมความมันส่วนเกิน",
+            "Ceramide Functioning Ingredients": "ฟื้นฟูเกราะป้องกันผิว",
+            "Eucalyptus Extract": "ช่วยให้ความชุ่มชื้นซึมลึกสู่ผิว",
           },
-          buyLink: "https://shopee.co.th/%E0%B8%A5%E0%B8%B2-%E0%B9%82%E0%B8%A3%E0%B8%8A-%E0%B9%82%E0%B8%9E%E0%B9%80%E0%B8%8B%E0%B8%A2%E0%B9%8C-La-Roche-Posay-Effaclar-DUO-M-%E0%B8%A1%E0%B8%AD%E0%B8%A2%E0%B8%8B%E0%B9%8C%E0%B9%80%E0%B8%88%E0%B8%AD%E0%B9%84%E0%B8%A3%E0%B9%80%E0%B8%8B%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B8%9C%E0%B8%B4%E0%B8%A7%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%A7-7.5ml-i.56542501.19585411106?referer=aHR0cHM6Ly90aC5teS1iZXN0LmNvbS8%3D&sp_atk=4cc54796-f949-43bf-a814-6471d41872ff&user_agent=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEzMC4wLjAuMCBTYWZhcmkvNTM3LjM2&utm_campaign=-&utm_content=thmybest_presses_50106&utm_medium=affiliates&utm_source=an_15297270000&utm_term=c1j7y81j71fm&xptdk=4cc54796-f949-43bf-a814-6471d41872ff",
+          buyLink: "https://shopee.co.th/Curel-INTENSIVE-MOISTURE-CARE-Intensive-Moisture-Cream-40g-%E0%B8%84%E0%B8%B4%E0%B8%A7%E0%B9%80%E0%B8%A3%E0%B8%A5-%E0%B8%AD%E0%B8%B4%E0%B8%99%E0%B9%80%E0%B8%97%E0%B8%99%E0%B8%8B%E0%B8%B5%E0%B8%9F-%E0%B8%A1%E0%B8%AD%E0%B8%A2%E0%B8%AA%E0%B9%8C%E0%B9%80%E0%B8%88%E0%B8%AD%E0%B8%A3%E0%B9%8C-%E0%B9%81%E0%B8%84%E0%B8%A3%E0%B9%8C-%E0%B8%A1%E0%B8%AD%E0%B8%A2%E0%B8%AA%E0%B9%8C%E0%B9%80%E0%B8%88%E0%B8%AD%E0%B8%A3%E0%B9%8C-%E0%B8%84%E0%B8%A3%E0%B8%B5%E0%B8%A1-40-%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%A1-i.66638122.1103900485?referer=aHR0cHM6Ly90aC5teS1iZXN0LmNvbS8%3D&sp_atk=80c5d0bc-3b88-40e6-aa20-23e1f3cdc413&user_agent=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEzMC4wLjAuMCBTYWZhcmkvNTM3LjM2&utm_campaign=-&utm_content=thmybest_presses_50106&utm_medium=affiliates&utm_source=an_15297270000&utm_term=c1j92wi5hsdy&xptdk=80c5d0bc-3b88-40e6-aa20-23e1f3cdc413",
           CombinedResults:
-            "เมื่อใช้คู่กัน Niacinamide ในทั้งสองผลิตภัณฑ์ช่วยลดการอักเสบ รอยแดง และเสริมเกราะป้องกันผิว Zinc PCA และ Zinc Oxide ",
+            "เมื่อใช้คู่กัน ช่วยลดอาการผิวแห้งลอกหรือบอบบาง พร้อมเสริมเกราะป้องกันผิว เหมาะสำหรับผิวแห้งหรือผิวแพ้ง่าย ",
         },
       ],
     };
@@ -92,8 +91,8 @@ const RecommendationSection = () => {
 
         {/* ปุ่มเลือกประเภทสินค้า */}
         <div className="category-buttons">
-            <button className='button-type-new'onClick={() => setCategory("cleanser")}>Cleanser</button>
-            <button className='button-type-new'onClick={() => setCategory("moisturizer")}>Moisturizer</button>
+            <button className='button-type-new' onClick={() => setCategory("sunscreen")}>Sunscreen</button>
+            <button className='button-type-new' onClick={() => setCategory("moisturizer")}>Moisturizer</button>
         </div>
 
         {/* แสดงสินค้าแนะนำ */}

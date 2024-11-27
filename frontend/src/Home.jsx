@@ -81,7 +81,23 @@ const Home = () => {
     );
 
     const goToProductDetail = (productId) => {
-        navigate(`/product/${productId}`);
+        const routes = {
+            "67432296ea803a162e31715d": "/Page2/mainheader",
+            "67432194ea803a162e317138": "/Page3/mainheader",
+            "674325f9ea803a162e317171": "/Page4/mainheader",
+            "674330afea803a162e3172a8": "/Page5/mainheader",
+            "67433a07ea803a162e317335": "/Page6/mainheader",
+            "67433b7fea803a162e317340": "/Page7/mainheader",
+            "674323a6ea803a162e317164": "/Page8/mainheader",
+            "6745731153de7f56d00815e7": "/Page9/mainheader",
+            "674495e59ce1d96d6d1009b9": "/Page10/mainheader",
+        };
+        const route = routes[productId];
+        if (route) {
+            navigate(route);
+        } else {
+            navigate(`/product/${productId}`); // ถ้าไม่ตรงกับเส้นทางใดๆ ก็ให้ไปที่หน้าเดิม
+        }
     };
 
     const goToTop = () => {
@@ -301,9 +317,9 @@ const Home = () => {
             
             {/* What About Us Section */}
             <section className="about-us" style={{ padding: "2rem 1rem", textAlign: "center" }}>
-                <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>What About Us</h2>
+                <h2 style={{ fontFamily: "Afacad, sans-serif", fontSize: "2rem", fontWeight: "bold" }}>What About Us</h2>
                 <div style={{ maxWidth: "1250px", margin: "0 auto" }}>
-                    <p style={{ fontSize: "1.2rem", lineHeight: "1.8", marginTop: "1rem"}}>
+                    <p style={{ fontFamily: "Afacad, sans-serif", fontSize: "1.2rem", lineHeight: "1.8", marginTop: "1rem"}}>
                         We are a leading platform dedicated to matching your skin with the best products
                         available. Whether you're looking for the perfect sunscreen, a gentle cleanser,
                         or a hydrating moisturizer, we’ve got you covered. Our mission is to help you

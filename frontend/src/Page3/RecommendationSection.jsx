@@ -42,30 +42,29 @@ const RecommendationSection = () => {
       moisturizer: [
         {
           id: 3,
-          name: "Moisturising Cream",
-          price: "฿199",
-          image: "https://down-th.img.susercontent.com/file/th-11134201-7rasb-m2mo91vszfyr30.webp",
+          name: "UltraSensitive Aquaporin Nourishing Gel Cream",
+          price: "฿765",
+          image: "https://down-th.img.susercontent.com/file/th-11134207-7qul0-lj19fdipjxch9b.webp",
           ingredients: {
-            "Ceramides": "ช่วยฟื้นฟูเกราะป้องกันผิว ลดการสูญเสียน้ำ",
-            "Hyaluronic Acid": "ช่วยเติมความชุ่มชื้นและกักเก็บน้ำในผิว",
+            "Glucosyl Glycerol": "กระตุ้นระบบนำส่งความชุ่มชื้นของผิว",
+            "Aqua Porin": "ช่วยเพิ่มการส่งผ่านน้ำในผิว",
           },
-          buyLink: "https://shopee.co.th/%E0%B9%80%E0%B8%8B%E0%B8%A3%E0%B8%B2%E0%B8%A7%E0%B8%B5-CERAVE-Moisturising-Cream-%E0%B8%84%E0%B8%A3%E0%B8%B5%E0%B8%A1%E0%B8%9A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B8%9C%E0%B8%B4%E0%B8%A7%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%9C%E0%B8%B4%E0%B8%A7%E0%B8%81%E0%B8%B2%E0%B8%A2-%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%9C%E0%B8%B4%E0%B8%A7%E0%B9%81%E0%B8%AB%E0%B9%89%E0%B8%87%E0%B8%A1%E0%B8%B2%E0%B8%81-50g.-i.121205602.1867293688?referer=aHR0cHM6Ly90aC5teS1iZXN0LmNvbS8%3D&sp_atk=5c4ac331-3c22-4e63-931e-70e9057cabab&user_agent=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEzMC4wLjAuMCBTYWZhcmkvNTM3LjM2&utm_campaign=-&utm_content=thmybest_presses_50106&utm_medium=affiliates&utm_source=an_15297270000&utm_term=c1jah7897buh&xptdk=5c4ac331-3c22-4e63-931e-70e9057cabab",
+          buyLink: "https://shopee.co.th/Eucerin-UltraSENSITIVE-AQUAPORIN-NOURISHING-GEL-CREAM-50-ML-%E0%B8%A2%E0%B8%B9%E0%B9%80%E0%B8%8B%E0%B8%AD%E0%B8%A3%E0%B8%B4%E0%B8%99-%E0%B8%84%E0%B8%A3%E0%B8%B5%E0%B8%A1%E0%B8%9A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B8%9C%E0%B8%B4%E0%B8%A7%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2-%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%9C%E0%B8%B4%E0%B8%A7%E0%B8%A1%E0%B8%B1%E0%B8%99-%E0%B8%82%E0%B8%B2%E0%B8%94%E0%B8%99%E0%B9%89%E0%B8%B3-i.378293230.7979765646?referer=aHR0cHM6Ly90aC5teS1iZXN0LmNvbS8%3D&sp_atk=998026ef-cbb4-48a7-aaa5-dc27fe96ecd5&user_agent=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEzMC4wLjAuMCBTYWZhcmkvNTM3LjM2&utm_campaign=-&utm_content=thmybest_presses_50106&utm_medium=affiliates&utm_source=an_15297270000&utm_term=c1j9ampe6q6w&xptdk=998026ef-cbb4-48a7-aaa5-dc27fe96ecd5",
           CombinedResults:
-            "เมื่อใช้คู่กัน Zinc Oxide ในกันแดดช่วยป้องกันการระคายเคืองจากรังสียูวี Niacinamide ในกันแดดและมอยส์เจอร์ช่วยลดการอักเสบของผิว ",
+            "เมื่อใช้คู่กัน เติมความชุ่มชื้นให้ผิวได้ล้ำลึก ช่วยลดความแห้งกร้านและเสริมให้กันแดดปกป้องผิวจากการสูญเสียน้ำได้ดียิ่งขึ้น",
         },
         {
           id: 4,
-          name: "Effaclar DUO+M",
-          price: "฿210",
-          image: "https://down-th.img.susercontent.com/file/th-11134201-7r990-lwlqo8dzbgqrc2.webp",
+          name: "Cica Soothing Moisture Gel",
+          price: "฿379",
+          image: "https://down-th.img.susercontent.com/file/th-11134207-7r98w-llpqt9tjeznr1d.webp",
           ingredients: {
-            "Niacinamide": "ลดการอักเสบของสิวและรอยแดง",
-            "Procerad": "ลดรอยดำและรอยแดงหลังการเกิดสิว",
-            "Zinc PCA": "ควบคุมความมันส่วนเกิน",
+            "Centella Asiatica Extract": "ลดการอักเสบและปลอบประโลมผิว",
+            "Sodium Hyaluronate": "เติมเต็มความชุ่มชื้นให้ผิว",
           },
-          buyLink: "https://shopee.co.th/%E0%B8%A5%E0%B8%B2-%E0%B9%82%E0%B8%A3%E0%B8%8A-%E0%B9%82%E0%B8%9E%E0%B9%80%E0%B8%8B%E0%B8%A2%E0%B9%8C-La-Roche-Posay-Effaclar-DUO-M-%E0%B8%A1%E0%B8%AD%E0%B8%A2%E0%B8%8B%E0%B9%8C%E0%B9%80%E0%B8%88%E0%B8%AD%E0%B9%84%E0%B8%A3%E0%B9%80%E0%B8%8B%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B8%9C%E0%B8%B4%E0%B8%A7%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%A7-7.5ml-i.56542501.19585411106?referer=aHR0cHM6Ly90aC5teS1iZXN0LmNvbS8%3D&sp_atk=4cc54796-f949-43bf-a814-6471d41872ff&user_agent=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEzMC4wLjAuMCBTYWZhcmkvNTM3LjM2&utm_campaign=-&utm_content=thmybest_presses_50106&utm_medium=affiliates&utm_source=an_15297270000&utm_term=c1j7y81j71fm&xptdk=4cc54796-f949-43bf-a814-6471d41872ff",
+          buyLink: "https://example.com/sunscreen-b",
           CombinedResults:
-            "เมื่อใช้คู่กัน Niacinamide ในทั้งสองผลิตภัณฑ์ช่วยลดการอักเสบ รอยแดง และเสริมเกราะป้องกันผิว Zinc PCA และ Zinc Oxide ",
+            "เมื่อใช้คู่กัน เหมาะสำหรับผิวแพ้ง่าย ช่วยลดการอักเสบและปลอบประโลมผิวจากแสงแดด ",
         },
       ],
     };
@@ -92,8 +91,8 @@ const RecommendationSection = () => {
 
         {/* ปุ่มเลือกประเภทสินค้า */}
         <div className="category-buttons">
-            <button className='button-type-new'onClick={() => setCategory("cleanser")}>Cleanser</button>
-            <button className='button-type-new'onClick={() => setCategory("moisturizer")}>Moisturizer</button>
+            <button className='button-type-new' onClick={() => setCategory("cleanser")}>Cleanser</button>
+            <button className='button-type-new' onClick={() => setCategory("moisturizer")}>Moisturizer</button>
         </div>
 
         {/* แสดงสินค้าแนะนำ */}

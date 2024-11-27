@@ -92,8 +92,8 @@ const RecommendationSection = () => {
 
         {/* ปุ่มเลือกประเภทสินค้า */}
         <div className="category-buttons">
-            <button className='button-type-new'onClick={() => setCategory("cleanser")}>Cleanser</button>
-            <button className='button-type-new'onClick={() => setCategory("moisturizer")}>Moisturizer</button>
+            <button className='button-type-new' onClick={() => setCategory("cleanser")}>Cleanser</button>
+            <button className='button-type-new' onClick={() => setCategory("moisturizer")}>Moisturizer</button>
         </div>
 
         {/* แสดงสินค้าแนะนำ */}
