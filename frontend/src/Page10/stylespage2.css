@@ -5,7 +5,7 @@ body {
     font-family: 'Afacad', sans-serif !important ;
     margin: 0;
     padding: 0;
-    background-color: #fefefe;
+    background-color: #ffffff;
 
   }
 /* ขนาดหน้าจอ */
@@ -14,7 +14,17 @@ body {
     padding: 0px;
     margin: 0px;
   } 
-  
+
+#root {
+    position: relative;  /* ให้ div#root เป็นตำแหน่งที่สัมพันธ์กับการตั้งค่าของลูก */
+    height: 100vh;       /* ให้ #root ครอบคลุมทั้งหน้าจอ */
+}
+
+div#root {
+    background: #ffffff;
+    height: 100%;
+    width: 100%;
+}
 
 /* พทหลัง Header */
     .header-Recom {

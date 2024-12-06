@@ -16,7 +16,10 @@ body {
 /* พื้นหลังฟอร์ม */
 .add-product-form-container {
     font-family:'Afacad', sans-serif;
-    background-color: #fff; /* Form background */
+    position: absolute;  /* ทำให้การ์ดไม่กระทบกับ layout อื่น */
+    left: 55%;           /* จัดการให้อยู่ตรงกลางจากด้านซ้าย */
+    transform: translateX(-50%);  /* เลื่อนการ์ดกลับมาจากขอบซ้ายให้ตรงกลาง */
+    background-color: #ffffff; /* Form background */
     padding: 30px;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -25,7 +28,6 @@ body {
     margin: auto;
     position: relative;
     margin-top: auto;
-    top: 20px;
 }
 
 /* Close Button */

@@ -1,4 +1,7 @@
 .user-products-container {
+    position: absolute;  /* ทำให้การ์ดไม่กระทบกับ layout อื่น */
+    left: 55%;           /* จัดการให้อยู่ตรงกลางจากด้านซ้าย */
+    transform: translateX(-50%);  /* เลื่อนการ์ดกลับมาจากขอบซ้ายให้ตรงกลาง */
     font-family:'Afacad';
     display: flex;
     flex-direction: column;
@@ -6,7 +9,7 @@
     padding: 20px;
     margin: 0px;
     background-color: #ffffff; /* พื้นหลังสีชมพู */
-    min-height: 100vh;
+    min-height: 95.8vh;
 }
 
 .title {

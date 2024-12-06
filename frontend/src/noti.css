@@ -7,9 +7,12 @@
   /* Notifications Section */
   .notifications-container {
     font-family:'Afacad';
+    position: absolute;  /* ทำให้การ์ดไม่กระทบกับ layout อื่น */
+    left: 55%;           /* จัดการให้อยู่ตรงกลางจากด้านซ้าย */
+    transform: translateX(-50%);  /* เลื่อนการ์ดกลับมาจากขอบซ้ายให้ตรงกลาง */
+    width: 50%;
     flex: 1;
     padding: 20px;
-    font-family: 'Arial', sans-serif;
     background-color: #ffffff;
   }
   

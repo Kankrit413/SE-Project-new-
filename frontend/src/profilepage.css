@@ -22,6 +22,9 @@
   .profile-card {
     font-family: 'Afacad' ;
     background-color: #ffe6e6;
+    position: absolute;  /* ทำให้การ์ดไม่กระทบกับ layout อื่น */
+    left: 55%;           /* จัดการให้อยู่ตรงกลางจากด้านซ้าย */
+    transform: translateX(-50%);  /* เลื่อนการ์ดกลับมาจากขอบซ้ายให้ตรงกลาง */
     width: 100%;
     max-width: 600px;
     border-radius: 8px;
