@@ -4,9 +4,9 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    margin: 0px;
     background-color: #ffffff; /* พื้นหลังสีชมพู */
     min-height: 100vh;
-    width: 100%;
 }
 
 .title {
@@ -26,6 +26,8 @@
 }
 
 .product-card {
+    justify-content: center;
+    align-self : center;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -41,14 +43,22 @@
 }
 
 .product-image {
-    width: 100%; /* ปรับให้ภาพขยายเต็มความกว้างของการ์ด */
-    height: 300px; /* กำหนดความสูงให้เหมาะสม */
+    justify-content: center;
+    align-items : center;
+    margin-left: 320px;
+    width: 150px; /* ปรับให้ภาพขยายเต็มความกว้างของการ์ด */
+    height: 200px; /* กำหนดความสูงให้เหมาะสม */
     object-fit: cover; /* ทำให้ภาพไม่เสียรูป */
     border-radius: 5px; /* ทำให้มุมโค้งมน */
     margin-bottom: 5px; /* ลดช่องว่างระหว่างภาพกับข้อมูล */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.new-center {
+    justify-content: center;
+    align-self : center;
+    text-align: center;
+}
 
 .back-button {
     margin-top: 20px;

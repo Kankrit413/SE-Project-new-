@@ -29,26 +29,30 @@ const UserProducts = () => {
             {/* Sidebar/Navbar */}
             <Navbar />
             <div className="user-products-container">
-                <h1 className="title">Your Products</h1>
-                {products.length === 0 ? (
+                <h1 className="title">Your Products</h1>                {products.length === 0 ? (
                     <p>No products found.</p>
                 ) : (
                     <div className="product-list">
+                        <div className='text-products'>
                         {products.map(product => (
                             <div key={product._id} className="product-card">
-                                <h3>{product.name}</h3>
-                                <img 
-                                    src={`http://localhost:5000${product.imageUrl}`} 
-                                    alt={product.name} 
-                                    className="product-image" 
-                                />
-                                <p><strong>Price:</strong> ${product.price}</p>
-                                <p><strong>Type:</strong> {product.type}</p>
-                                <p><strong>Brand:</strong> {product.brand}</p>
-                                <p><strong>Added By:</strong> {product.addedBy?.username || 'Unknown'}</p>
-                                <p><strong>Created At:</strong> {new Date(product.createdAt).toLocaleString()}</p>
+        
+                                    <div style={{ fontSize: '20px', fontWeight: 'bold' , textAlign: 'center'}}>{product.name}</div>
+                                    <img 
+                                        src={`http://localhost:5000${product.imageUrl}`} 
+                                        alt={product.name} 
+                                        className="product-image"
+
+                                    />
+                                    <div style={{ fontSize: '16px', fontWeight: 'bold' , textAlign: 'center' }}><strong>Price:</strong> ${product.price}</div>
+                                    <div style={{ fontSize: '16px', fontWeight: 'bold' , textAlign: 'center' }} ><strong>Type:</strong> {product.type}</div>
+                                    <div style={{ fontSize: '16px', fontWeight: 'bold' , textAlign: 'center' }}><strong>Brand:</strong> {product.brand}</div>
+                                    <div style={{ fontSize: '16px', fontWeight: 'bold' , textAlign: 'center' }}><strong>Added By:</strong> {product.addedBy?.username || 'Unknown'}</div>
+                                    <div style={{ fontSize: '16px', fontWeight: 'bold' , textAlign: 'center' }}><strong>Created At:</strong> {new Date(product.createdAt).toLocaleString()}</div>
                             </div>
+                        
                         ))}
+                        </div>
                     </div>
                 )}
                 <button className="back-button" onClick={() => navigate(-1)}>

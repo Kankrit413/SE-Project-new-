@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';  // Import useNavigate
 import './payment.css';
+import paymentSuccessful from './paymentsuccessful';
 
 const PaymentMethods = () => {
   const [selectedMethod, setSelectedMethod] = useState('');
@@ -21,6 +22,7 @@ const PaymentMethods = () => {
   };
 
   return (
+    
     <div className="payment-container">
       {/* Close Button */}
       <button className="close-btn" onClick={() => navigate('/')}>
@@ -79,7 +81,7 @@ const PaymentMethods = () => {
             <div className="qr-code">
               <h3>Scan QR Code</h3>
               <img 
-                src="https://via.placeholder.com/200" 
+                src="https://www.icon0.com/wp-content/uploads/2022/04/%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%84%E0%B8%B4%E0%B8%A7%E0%B8%AD%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%84%E0%B9%89%E0%B8%94%E0%B8%9F%E0%B8%A3%E0%B8%B5-%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%AB%E0%B8%A1%E0%B8%94%E0%B8%AD%E0%B8%B2%E0%B8%A2%E0%B8%B8-1-1024x1024.png" 
                 alt="QR Code" 
                 className="qr-code-img" 
               />
@@ -101,7 +103,8 @@ const PaymentMethods = () => {
             <span>Total</span>
             <span>฿{price}</span> {/* Display the total price */}
           </div>
-          <button className="continue-button">Continue</button>
+          <button className="continue-button"
+          onClick={() => navigate('/paymentsuccessful')}>Continue</button>
         </div>
       </div>
     </div>

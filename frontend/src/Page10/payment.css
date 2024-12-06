@@ -53,6 +53,7 @@
 
 .payment-method input {
     margin-right: 10px;
+    color: #000;
 }
 
 /* Payment Details (Middle Section) */
@@ -63,6 +64,7 @@
 
 .credit-card-form input,
 .credit-card-form select {
+    color: #000;
     width: 100%;
     padding: 10px;
     margin: 10px 0;

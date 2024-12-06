@@ -245,14 +245,15 @@ const AddProductForm = () => {
               <ul className="related-products-list">
                 {relatedProducts.map((product, index) => (
                   <li key={index} className="related-product-item">
-                    {product}
+                    
                     <button
                       type="button"
                       onClick={() => handleRemoveRelatedProduct(index)}
                       className="remove-btn"
                     >
                       Remove
-                    </button>   
+                    </button>  
+                    {product}
                   </li>
                 ))}
               </ul>

@@ -10,9 +10,9 @@ body {
   }
 /* ขนาดหน้าจอ */
   .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    background-color: #ffffff;
+    padding: 0px;
+    margin: 0px;
   } 
   
 

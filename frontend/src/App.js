@@ -21,7 +21,7 @@ import MainHeader8 from "./Page8/mainheader8";
 import MainHeader9 from "./Page9/mainheader9";
 import MainHeader10 from "./Page10/mainheader10";
 import AddProductForm1 from './addproduct1'; 
-
+import PaymentSuccessful from './Page2/paymentsuccessful';
 const App = () => {
   return (
     <Router>
@@ -48,9 +48,11 @@ const App = () => {
         <Route path="/Page9/mainheader" element={<MainHeader9 />} />
         <Route path="/Page10/mainheader" element={<MainHeader10 />} />
         <Route path="/add-product1" element={<AddProductForm1 />} />
+        <Route path="/paymentsuccessful" element={<PaymentSuccessful />} />
       </Routes>
     </Router>
   );
 };
+// Desktop
 
 export default App;

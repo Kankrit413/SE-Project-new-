@@ -78,6 +78,7 @@
     font-size: 1.1em;
     color: #777;
     padding-right: 10px; /* เพิ่มระยะห่างระหว่าง Label กับ Input */
+    
   }
   
   .detail-item input {

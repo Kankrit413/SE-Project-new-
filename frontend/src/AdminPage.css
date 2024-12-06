@@ -85,3 +85,10 @@
 .update-section button:hover {
     background-color: #ff6666;
 }
+
+.text-products {
+    text-align: center !important; 
+    justify-self: center !important;
+    align-self: center;
+    border: #555 solid 2px;    
+}

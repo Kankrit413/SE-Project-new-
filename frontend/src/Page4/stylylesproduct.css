@@ -119,7 +119,7 @@
 /* การ์ดสินค้าและแนะนํา */
 .recommendation-card,
 .product-card {
-    background-color: #28c64a;
+    background-color: #fafafa;
     width: 800px;
     height: 400px;
     /* overflow: hidden;  เนื้อหาที่เกินขอบเขตของ */

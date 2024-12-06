@@ -7,6 +7,7 @@
   
   /* Sidebar Styles */
   .sidebar {
+    margin-right: 30px;
     width: 250px;
     height: 98%;
     background-color: #ffe6e6;
